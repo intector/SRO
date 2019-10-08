@@ -3,6 +3,9 @@
 
 ### Here’re the important parts I used:
 
+#### the Oven - BLACK+DECKER TO3250XSB
+
+
 #### Controller - ESP32-NodeMCU
 ![Temperature Module](/pictures/parts/NodeMCU.jpg)
 I got those from China quite some time ago and can't recall from where exactly, but any ESP32 module should work for that purpose. The difference to the ESP32-DevKitC from ESPRESSIF is the additional blue LED which is connected to GPIO2. 
