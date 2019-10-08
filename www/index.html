@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Soldering Reflow Oven Interface</title>
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu&display=swap" rel="stylesheet">
+    <!-- Bootstrap -->
+    <link href="css/bootstrap-4.3.1.css" rel="stylesheet">
+    <link href="css/rangeslider/rangeslider.css" rel="stylesheet">
+    <link href="css/bootstrap-custom.css" rel="stylesheet">
+    <link href="css/cmdButton.css" rel="stylesheet">
+  </head>
+  <body>
+    <div class="container-fluid">
+      <hr>
+        <header class="col-12">
+          <div class="row justify-content-center align-items-center h-100 d-flex">
+            <div class="container-fluid col-6">
+              <h2 class="m-0">Soldering Reflow Oven Interface</h2>
+            </div>
+            <div class="container-fluid col-6">
+              <img src="images/intector_gray_50.png" class="float-right" alt=""/>
+            </div>
+          </div>
+        </header>
+      <hr>
+        <div class="row">
+          <div class="col-9">
+            <div class="container-fluid table-primary border rounded border-info">
+
+              <div class="row justify-content-center align-items-center h-100 d-flex">
+                <div class="container-fluid col-3">
+                  <h3 class="m-0">Soldering Sequence</h3>
+                </div>
+                <div class="container-fluid col-2">
+                  <button type="button" onclick="cmdBtnAni(this)" id="btnSolderingSequence" data-txtoff="RUN" data-txton="STOP"
+                          class="cmdButton sroBtnGray btn btn-lg btn-block">RUN</button>
+                  
+                </div>
+                <div class="container-fluid col-2">
+                  <div class="row p-1 justify-content-center align-items-center h-100 d-flex">
+                    <div class="col-6"><h5 class="m-0">MQTT:</h5></div>
+                    <div class="col-6"><div class="conn_mqtt notconnected"></div></div>
+                  </div>
+                  <div class="row p-1 justify-content-center align-items-center h-100 d-flex">
+                    <div  class="col-6"><h5 class="m-0">ESP32:</h5></div>
+                    <div class="col-6"><div class="conn_esp32 notconnected"></div></div>
+                  </div>
+                </div>
+                <div class="container-fluid col-3">
+                  <h3 class="text-right m-0">Actual Temperature</h3>
+                </div>
+                <div class="container-fluid col-2">
+                  <h1 class="text-right m-0 TempValue TempSensor_OFF" id="TempDisplay">0 °C</h1>
+                </div>
+              </div>
+
+            </div>
+
+            <div class="container-fluid mt-1 border border-secondary rounded">
+                <canvas id="ReflowChart" class="my-2"></canvas>
+            </div>
+          </div>
+
+          <div class="col-3">
+            <div class="container-fluid table-active border border-secundary rounded">
+              <div class="text-center"><h5>Soldering Parameter</h5></div>
+
+              <table class="table table-sm table-bordered">
+                <thead>
+                  <tr>
+                    <th scope="col" class="text-center">#</th>
+                    <th scope="col" class="text-center">time in seconds</th>
+                    <th scope="col" class="text-center">temperature in °C</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row" class="text-center">1</th>
+                    <td><input id="InputTime01" onchange="SRO_ParInput(this)" class="form-control text-right form-control-sm"
+                               type="number" min="0" max="1200" placeholder="0"></td>
+                    <td><input id="InputTemp01" onchange="SRO_ParInput(this)" class="form-control text-right form-control-sm"
+                               type="number" min="25" max="400" placeholder="0"></td>
+                  </tr>
+                  <tr>
+                    <th scope="row" class="text-center">2</th>
+                    <td><input id="InputTime02" onchange="SRO_ParInput(this)" class="form-control text-right form-control-sm"
+                               type="number" min="0" max="1200" placeholder="0"></td>
+                    <td><input id="InputTemp02" onchange="SRO_ParInput(this)" class="form-control text-right form-control-sm"
+                               type="number" min="0" max="500" placeholder="0"></td>
+                  </tr>
+                  <tr>
+                    <th scope="row" class="text-center">3</th>
+                    <td><input id="InputTime03" onchange="SRO_ParInput(this)" class="form-control text-right form-control-sm"
+                               type="number" min="0" max="1200" placeholder="0"></td>
+                    <td><input id="InputTemp03" onchange="SRO_ParInput(this)" class="form-control text-right form-control-sm"
+                               type="number" min="0" max="500" placeholder="0"></td>
+                  </tr>
+                  <tr>
+                    <th scope="row" class="text-center">4</th>
+                    <td><input id="InputTime04" onchange="SRO_ParInput(this)" class="form-control text-right form-control-sm"
+                               type="number" min="0" max="1200" placeholder="0"></td>
+                    <td><input id="InputTemp04" onchange="SRO_ParInput(this)" class="form-control text-right form-control-sm"
+                               type="number" min="0" max="500" placeholder="0"></td>
+                  </tr>
+                  <tr>
+                    <th scope="row" class="text-center">5</th>
+                    <td><input id="InputTime05" onchange="SRO_ParInput(this)" class="form-control text-right form-control-sm"
+                               type="number" min="0" max="1200" placeholder="0"></td>
+                    <td><input id="InputTemp05" onchange="SRO_ParInput(this)" class="form-control text-right form-control-sm"
+                               type="number" min="0" max="500" placeholder="0"></td>
+                  </tr>
+                </tbody>
+              </table>
+
+              <table class="table table-sm table-bordered mt-2">
+                <tbody>
+                  <tr>
+                    <td colspan="2" class="align-middle"><select class="form-control form-control-sm"  onchange="SRO_ParSetSel(this)" id="idSRO_ParSetSel">
+                                                            <option value="1" selected="selected">Soldering Parameter Set - 01</option>
+                                                            <option value="2">Soldering Parameter Set - 02</option>
+                                                            <option value="3">Soldering Parameter Set - 03</option>
+                                                            <option value="4">Soldering Parameter Set - 04</option>
+                                                            <option value="5">Soldering Parameter Set - 05</option>
+                                                            <option value="6">Soldering Parameter Set - 06</option>
+                                                            <option value="7">Soldering Parameter Set - 07</option>
+                                                            <option value="8">Soldering Parameter Set - 08</option>
+                                                            <option value="9">Soldering Parameter Set - 09</option>
+                                                            <option value="10">Soldering Parameter Set - 10</option>
+                                                          </select>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="align-middle text-right">
+                      <button type="button" onclick="CMD_BtnClick(this)" id="PAR_BtnLoad"
+                              class="btn btn-info btn btn-block">load set</button>
+                    </td>
+                    <td class="align-middle">
+                      <button type="button" onclick="CMD_BtnClick(this)" id="PAR_BtnSave"
+                              class="btn btn-info btn btn-block">save set</button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <div class="container-fluid mt-1 p-2 table-info border border-secundary rounded">
+
+              <div class="row justify-content-center align-items-center h-100 d-flex">
+
+                <div class="container-fluid col-6 pb-1">
+                  <div class="text-center"><h5 class="m-0">PID settings</h5></div>
+                </div>
+                <div class="container-fluid col-3 pb-1">
+                      <button type="button" onclick="CMD_BtnClick(this)" id="PID_BtnLoad"
+                              class="btn btn-sm btn-info btn btn-block">load</button>
+                </div>
+                <div class="container-fluid col-3 pb-1">
+                      <button type="button" onclick="CMD_BtnClick(this)" id="PID_BtnSave"
+                              class="btn btn-sm btn-info btn btn-block">save</button>
+                </div>
+
+                </div>
+
+
+              <div class="table-responsive">
+                <table class="table table-sm table-bordered">
+                  <tbody>
+                    <tr class="table-info">
+                      <th class="align-middle w-75 text-center">proportional term Kp</th>
+                      <td class="align-middle"><input id="maint_PID_KP" onchange="PID_ParInput(this)" class="form-control text-right form-control-sm"
+                                                      type="number" placeholder="0"></td>
+                    </tr>
+                    <tr class="table-info">
+                      <th class="align-middle w-75 text-center">integral term Ki</th>
+                      <td class="align-middle"><input id="maint_PID_KI" onchange="PID_ParInput(this)" class="form-control text-right form-control-sm"
+                                                      type="number" placeholder="0"></td>
+                    </tr>
+                    <tr class="table-info">
+                      <th class="align-middle w-75 text-center">derivative influence Kp</th>
+                      <td class="align-middle"><input id="maint_PID_KD" onchange="PID_ParInput(this)" class="form-control text-right form-control-sm"
+                                                      type="number" placeholder="0"></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+            </div>
+
+            <div class="container-fluid mt-1 p-2 table-warning border border-secundary rounded">
+              <div class="text-center"><h5>Manual Control</h5></div>
+              <hr>
+              <div class="container-fluid">
+                <div class="row justify-content-center align-items-center h-100 d-flex">
+                  <div class="col-6 text-right"><b>Heating Elements</b></div>
+                  <button type="button" onclick="cmdBtnAni(this)" id="btnHeatingElements" data-txtoff="ON" data-txton="OFF"
+                          class="col-6 cmdButton sroBtnGray btn btn btn-block">ON</button>
+                </div>
+                <hr>
+                <div class="row justify-content-center align-items-center h-100 d-flex">
+                  <div class="col-6 text-right"><b>Convection Fan</b></div>
+                  <button type="button" onclick="cmdBtnAni(this)" id="btnConvectionFan" data-txtoff="ON" data-txton="OFF"
+                          class="col-6 cmdButton sroBtnGray btn btn btn-block">ON</button>
+                </div>
+                <hr>
+                <div class="row justify-content-center align-items-center h-100 d-flex">
+                  <div class="col-6 text-right"><b>Door</b></div>
+                  <div class="slidecontainer col-6">
+                      <input type="range" min="0" max="100" value="0" class="slider" id="btnDoor">
+<!--                  <button type="button" onclick="cmdBtnAni(this)" id="btnDoor" data-txtoff="OPEN" data-txton="CLOSE"
+                          class="col-6 cmdButton sroBtnGray btn btn btn-block">OPEN</button> -->
+                  </div>
+                </div>
+              </div>
+              <hr>
+            </div>
+            
+          </div>
+        </div>
+    </div>
+
+
+      <hr>
+        <footer class="text-center text-black-50">
+          <div class="col-12">
+            <p>copyright © 2019 intector, all rights reserved</p>
+          </div>
+        </footer>
+<!--    </div> -->
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="js/jquery-3.3.1.min.js" type="text/javascript"></script>
+
+    <!-- my script files -->
+    <script src="js/data_handling.js" type="text/javascript"></script>
+
+    <!-- mqtt script -->
+    <script src="js/mqttws31.js" type="text/javascript"></script>
+    <script src="js/mqtt_config.js" type="text/javascript"></script>
+    <script src="js/sro_mqtt_app.js" type="text/javascript"></script>
+
+    <!-- chart script -->
+    <script src="js/charts/Chart.min.js" type="text/javascript"></script>
+    <script src="js/draw_chart.js" type="text/javascript"></script>
+    
+    <!-- cmd button script -->
+    <script src="js/rangeslider/rangeslider.js" type="text/javascript"></script>
+    <script src="js/cmdButton.js" type="text/javascript"></script>
+
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/popper.min.js" type="text/javascript"></script>
+    <script src="js/bootstrap-4.3.1.js" type="text/javascript"></script>
+    
+  </body>
+</html>

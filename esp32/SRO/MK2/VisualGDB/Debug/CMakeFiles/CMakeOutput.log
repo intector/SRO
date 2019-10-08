@@ -1,0 +1,370 @@
+The target system is: Generic -  - 
+The host system is: Windows - 10.0.18362 - AMD64
+Checking whether the ASM compiler is GNU using "--version" matched "(GNU assembler)|(GCC)|(Free Software Foundation)":
+xtensa-esp32-elf-gcc.exe (crosstool-NG crosstool-ng-1.22.0-80-g6c4433a5) 5.2.0
+Copyright (C) 2015 Free Software Foundation, Inc.
+This is free software; see the source for copying conditions.  There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+Compiling the C compiler identification source file "CMakeCCompilerId.c" succeeded.
+Compiler: C:/sysgcc/esp32/opt/xtensa-esp32-elf/bin/xtensa-esp32-elf-gcc.exe 
+Build flags: 
+Id flags: -c 
+
+The output was:
+0
+
+
+Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "CMakeCCompilerId.o"
+
+The C compiler identification is GNU, found in "C:/Users/ms/source/repos/SRO/MK2/VisualGDB/Debug/CMakeFiles/3.15.2/CompilerIdC/CMakeCCompilerId.o"
+
+Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" succeeded.
+Compiler: C:/sysgcc/esp32/opt/xtensa-esp32-elf/bin/xtensa-esp32-elf-g++.exe 
+Build flags: 
+Id flags: -c 
+
+The output was:
+0
+
+
+Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "CMakeCXXCompilerId.o"
+
+The CXX compiler identification is GNU, found in "C:/Users/ms/source/repos/SRO/MK2/VisualGDB/Debug/CMakeFiles/3.15.2/CompilerIdCXX/CMakeCXXCompilerId.o"
+
+Determining if the C compiler works passed with the following output:
+Change Dir: C:/Users/ms/source/repos/SRO/MK2/VisualGDB/Debug/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:/Program Files (x86)/Sysprogs/VisualGDB/ninja.exe cmTC_700c8 && [1/2] Building C object CMakeFiles/cmTC_700c8.dir/testCCompiler.c.obj
+[2/2] Linking C executable cmTC_700c8
+c:/sysgcc/esp32/opt/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/5.2.0/../../../../xtensa-esp32-elf/bin/ld.exe: warning: cannot find entry symbol _start; defaulting to 00400054
+
+
+
+Detecting C compiler ABI info compiled with the following output:
+Change Dir: C:/Users/ms/source/repos/SRO/MK2/VisualGDB/Debug/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:/Program Files (x86)/Sysprogs/VisualGDB/ninja.exe cmTC_f7eae && [1/2] Building C object CMakeFiles/cmTC_f7eae.dir/CMakeCCompilerABI.c.obj
+Using built-in specs.
+COLLECT_GCC=C:\sysgcc\esp32\opt\xtensa-esp32-elf\bin\xtensa-esp32-elf-gcc.exe
+Target: xtensa-esp32-elf
+Configured with: /builds/idf/crosstool-NG/.build/src/gcc-5.2.0/configure --build=x86_64-build_pc-linux-gnu --host=i686-host_pc-mingw32 --target=xtensa-esp32-elf --prefix=/builds/idf/crosstool-NG/builds/xtensa-esp32-elf --with-local-prefix=/builds/idf/crosstool-NG/builds/xtensa-esp32-elf/xtensa-esp32-elf/sysroot --with-sysroot=/builds/idf/crosstool-NG/builds/xtensa-esp32-elf/xtensa-esp32-elf/sysroot --with-newlib --enable-threads=no --disable-shared --with-pkgversion='crosstool-NG crosstool-ng-1.22.0-80-g6c4433a5' --disable-__cxa_atexit --enable-cxx-flags='-fno-rtti -ffunction-sections' --with-gmp=/builds/idf/crosstool-NG/.build/xtensa-esp32-elf/buildtools/complibs-host --with-mpfr=/builds/idf/crosstool-NG/.build/xtensa-esp32-elf/buildtools/complibs-host --with-mpc=/builds/idf/crosstool-NG/.build/xtensa-esp32-elf/buildtools/complibs-host --with-isl=/builds/idf/crosstool-NG/.build/xtensa-esp32-elf/buildtools/complibs-host --with-cloog=/builds/idf/crosstool-NG/.build/xtensa-esp32-elf/buildtools/complibs-host --with-libelf=/builds/idf/crosstool-NG/.build/xtensa-esp32-elf/buildtools/complibs-host --enable-lto --enable-target-optspace --without-long-double-128 --disable-libgomp --disable-libmudflap --disable-libssp --disable-libquadmath --disable-libquadmath-support --disable-nls --enable-languages=c,c++ --disable-libstdcxx-verbose --enable-threads=posix --enable-gcov-custom-rtio
+Thread model: posix
+gcc version 5.2.0 (crosstool-NG crosstool-ng-1.22.0-80-g6c4433a5) 
+COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_f7eae.dir/CMakeCCompilerABI.c.obj' '-c'
+ c:/sysgcc/esp32/opt/xtensa-esp32-elf/bin/../libexec/gcc/xtensa-esp32-elf/5.2.0/cc1.exe -quiet -v -iprefix c:\sysgcc\esp32\opt\xtensa-esp32-elf\bin\../lib/gcc/xtensa-esp32-elf/5.2.0/ -isysroot c:\sysgcc\esp32\opt\xtensa-esp32-elf\bin\../xtensa-esp32-elf/sysroot C:/Users/ms/AppData/Local/VisualGDB/CMake/share/cmake-3.15/Modules/CMakeCCompilerABI.c -quiet -dumpbase CMakeCCompilerABI.c -auxbase-strip CMakeFiles/cmTC_f7eae.dir/CMakeCCompilerABI.c.obj -version -o C:\Users\ms\AppData\Local\Temp\cc16fpgR.s
+GNU C11 (crosstool-NG crosstool-ng-1.22.0-80-g6c4433a5) version 5.2.0 (xtensa-esp32-elf)
+	compiled by GNU C version 6.3.0 20170516, GMP version 6.0.0, MPFR version 3.1.3, MPC version 1.0.3
+GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+ignoring duplicate directory "c:/sysgcc/esp32/opt/xtensa-esp32-elf/lib/gcc/../../lib/gcc/xtensa-esp32-elf/5.2.0/include"
+ignoring nonexistent directory "c:\sysgcc\esp32\opt\xtensa-esp32-elf\bin\../xtensa-esp32-elf/sysroot/builds/idf/crosstool-NG/builds/xtensa-esp32-elf/lib/gcc/xtensa-esp32-elf/5.2.0/../../../../include"
+ignoring duplicate directory "c:/sysgcc/esp32/opt/xtensa-esp32-elf/lib/gcc/../../lib/gcc/xtensa-esp32-elf/5.2.0/include-fixed"
+ignoring duplicate directory "c:/sysgcc/esp32/opt/xtensa-esp32-elf/lib/gcc/../../lib/gcc/xtensa-esp32-elf/5.2.0/../../../../xtensa-esp32-elf/include"
+#include "..." search starts here:
+#include <...> search starts here:
+ c:\sysgcc\esp32\opt\xtensa-esp32-elf\bin\../lib/gcc/xtensa-esp32-elf/5.2.0/include
+ c:\sysgcc\esp32\opt\xtensa-esp32-elf\bin\../lib/gcc/xtensa-esp32-elf/5.2.0/include-fixed
+ c:\sysgcc\esp32\opt\xtensa-esp32-elf\bin\../lib/gcc/xtensa-esp32-elf/5.2.0/../../../../xtensa-esp32-elf/include
+ c:\sysgcc\esp32\opt\xtensa-esp32-elf\bin\../xtensa-esp32-elf/sysroot/usr/include
+End of search list.
+GNU C11 (crosstool-NG crosstool-ng-1.22.0-80-g6c4433a5) version 5.2.0 (xtensa-esp32-elf)
+	compiled by GNU C version 6.3.0 20170516, GMP version 6.0.0, MPFR version 3.1.3, MPC version 1.0.3
+GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+Compiler executable checksum: f8c150667b22ef24be0575fd93addc63
+COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_f7eae.dir/CMakeCCompilerABI.c.obj' '-c'
+ c:/sysgcc/esp32/opt/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/5.2.0/../../../../xtensa-esp32-elf/bin/as.exe --traditional-format -o CMakeFiles/cmTC_f7eae.dir/CMakeCCompilerABI.c.obj C:\Users\ms\AppData\Local\Temp\cc16fpgR.s
+COMPILER_PATH=c:/sysgcc/esp32/opt/xtensa-esp32-elf/bin/../libexec/gcc/xtensa-esp32-elf/5.2.0/;c:/sysgcc/esp32/opt/xtensa-esp32-elf/bin/../libexec/gcc/;c:/sysgcc/esp32/opt/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/5.2.0/../../../../xtensa-esp32-elf/bin/
+LIBRARY_PATH=c:/sysgcc/esp32/opt/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/5.2.0/;c:/sysgcc/esp32/opt/xtensa-esp32-elf/bin/../lib/gcc/;c:/sysgcc/esp32/opt/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/5.2.0/../../../../xtensa-esp32-elf/lib/;c:/sysgcc/esp32/opt/xtensa-esp32-elf/bin/../xtensa-esp32-elf/sysroot/lib/;c:/sysgcc/esp32/opt/xtensa-esp32-elf/bin/../xtensa-esp32-elf/sysroot/usr/lib/
+COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_f7eae.dir/CMakeCCompilerABI.c.obj' '-c'
+[2/2] Linking C executable cmTC_f7eae
+Using built-in specs.
+COLLECT_GCC=C:\sysgcc\esp32\opt\xtensa-esp32-elf\bin\xtensa-esp32-elf-gcc.exe
+COLLECT_LTO_WRAPPER=c:/sysgcc/esp32/opt/xtensa-esp32-elf/bin/../libexec/gcc/xtensa-esp32-elf/5.2.0/lto-wrapper.exe
+Target: xtensa-esp32-elf
+Configured with: /builds/idf/crosstool-NG/.build/src/gcc-5.2.0/configure --build=x86_64-build_pc-linux-gnu --host=i686-host_pc-mingw32 --target=xtensa-esp32-elf --prefix=/builds/idf/crosstool-NG/builds/xtensa-esp32-elf --with-local-prefix=/builds/idf/crosstool-NG/builds/xtensa-esp32-elf/xtensa-esp32-elf/sysroot --with-sysroot=/builds/idf/crosstool-NG/builds/xtensa-esp32-elf/xtensa-esp32-elf/sysroot --with-newlib --enable-threads=no --disable-shared --with-pkgversion='crosstool-NG crosstool-ng-1.22.0-80-g6c4433a5' --disable-__cxa_atexit --enable-cxx-flags='-fno-rtti -ffunction-sections' --with-gmp=/builds/idf/crosstool-NG/.build/xtensa-esp32-elf/buildtools/complibs-host --with-mpfr=/builds/idf/crosstool-NG/.build/xtensa-esp32-elf/buildtools/complibs-host --with-mpc=/builds/idf/crosstool-NG/.build/xtensa-esp32-elf/buildtools/complibs-host --with-isl=/builds/idf/crosstool-NG/.build/xtensa-esp32-elf/buildtools/complibs-host --with-cloog=/builds/idf/crosstool-NG/.build/xtensa-esp32-elf/buildtools/complibs-host --with-libelf=/builds/idf/crosstool-NG/.build/xtensa-esp32-elf/buildtools/complibs-host --enable-lto --enable-target-optspace --without-long-double-128 --disable-libgomp --disable-libmudflap --disable-libssp --disable-libquadmath --disable-libquadmath-support --disable-nls --enable-languages=c,c++ --disable-libstdcxx-verbose --enable-threads=posix --enable-gcov-custom-rtio
+Thread model: posix
+gcc version 5.2.0 (crosstool-NG crosstool-ng-1.22.0-80-g6c4433a5) 
+COMPILER_PATH=c:/sysgcc/esp32/opt/xtensa-esp32-elf/bin/../libexec/gcc/xtensa-esp32-elf/5.2.0/;c:/sysgcc/esp32/opt/xtensa-esp32-elf/bin/../libexec/gcc/;c:/sysgcc/esp32/opt/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/5.2.0/../../../../xtensa-esp32-elf/bin/
+LIBRARY_PATH=c:/sysgcc/esp32/opt/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/5.2.0/;c:/sysgcc/esp32/opt/xtensa-esp32-elf/bin/../lib/gcc/;c:/sysgcc/esp32/opt/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/5.2.0/../../../../xtensa-esp32-elf/lib/;c:/sysgcc/esp32/opt/xtensa-esp32-elf/bin/../xtensa-esp32-elf/sysroot/lib/;c:/sysgcc/esp32/opt/xtensa-esp32-elf/bin/../xtensa-esp32-elf/sysroot/usr/lib/
+COLLECT_GCC_OPTIONS='-nostdlib' '-v' '-o' 'cmTC_f7eae'
+ c:/sysgcc/esp32/opt/xtensa-esp32-elf/bin/../libexec/gcc/xtensa-esp32-elf/5.2.0/collect2.exe -plugin c:/sysgcc/esp32/opt/xtensa-esp32-elf/bin/../libexec/gcc/xtensa-esp32-elf/5.2.0/liblto_plugin-0.dll -plugin-opt=c:/sysgcc/esp32/opt/xtensa-esp32-elf/bin/../libexec/gcc/xtensa-esp32-elf/5.2.0/lto-wrapper.exe -plugin-opt=-fresolution=C:\Users\ms\AppData\Local\Temp\ccvC03C1.res --sysroot=c:\sysgcc\esp32\opt\xtensa-esp32-elf\bin\../xtensa-esp32-elf/sysroot -o cmTC_f7eae -Lc:/sysgcc/esp32/opt/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/5.2.0 -Lc:/sysgcc/esp32/opt/xtensa-esp32-elf/bin/../lib/gcc -Lc:/sysgcc/esp32/opt/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/5.2.0/../../../../xtensa-esp32-elf/lib -Lc:/sysgcc/esp32/opt/xtensa-esp32-elf/bin/../xtensa-esp32-elf/sysroot/lib -Lc:/sysgcc/esp32/opt/xtensa-esp32-elf/bin/../xtensa-esp32-elf/sysroot/usr/lib CMakeFiles/cmTC_f7eae.dir/CMakeCCompilerABI.c.obj
+c:/sysgcc/esp32/opt/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/5.2.0/../../../../xtensa-esp32-elf/bin/ld.exe: warning: cannot find entry symbol _start; defaulting to 00400074
+
+
+
+Parsed C implicit include dir info from above output: rv=done
+  found start of include info
+  found start of implicit include info
+    add: [c:/sysgcc/esp32/opt/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/5.2.0/include]
+    add: [c:/sysgcc/esp32/opt/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/5.2.0/include-fixed]
+    add: [c:/sysgcc/esp32/opt/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/5.2.0/../../../../xtensa-esp32-elf/include]
+    add: [c:/sysgcc/esp32/opt/xtensa-esp32-elf/bin/../xtensa-esp32-elf/sysroot/usr/include]
+  end of search list found
+  collapse include dir [c:/sysgcc/esp32/opt/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/5.2.0/include] ==> [C:/sysgcc/esp32/opt/xtensa-esp32-elf/lib/gcc/xtensa-esp32-elf/5.2.0/include]
+  collapse include dir [c:/sysgcc/esp32/opt/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/5.2.0/include-fixed] ==> [C:/sysgcc/esp32/opt/xtensa-esp32-elf/lib/gcc/xtensa-esp32-elf/5.2.0/include-fixed]
+  collapse include dir [c:/sysgcc/esp32/opt/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/5.2.0/../../../../xtensa-esp32-elf/include] ==> [C:/sysgcc/esp32/opt/xtensa-esp32-elf/xtensa-esp32-elf/include]
+  collapse include dir [c:/sysgcc/esp32/opt/xtensa-esp32-elf/bin/../xtensa-esp32-elf/sysroot/usr/include] ==> [C:/sysgcc/esp32/opt/xtensa-esp32-elf/xtensa-esp32-elf/sysroot/usr/include]
+  implicit include dirs: [C:/sysgcc/esp32/opt/xtensa-esp32-elf/lib/gcc/xtensa-esp32-elf/5.2.0/include;C:/sysgcc/esp32/opt/xtensa-esp32-elf/lib/gcc/xtensa-esp32-elf/5.2.0/include-fixed;C:/sysgcc/esp32/opt/xtensa-esp32-elf/xtensa-esp32-elf/include;C:/sysgcc/esp32/opt/xtensa-esp32-elf/xtensa-esp32-elf/sysroot/usr/include]
+
+
+Parsed C implicit link information from above output:
+  link line regex: [^( *|.*[/\])(xtensa-esp32-elf-ld\.exe|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\]+-)?ld|collect2)[^/\]*( |$)]
+  ignore line: [Change Dir: C:/Users/ms/source/repos/SRO/MK2/VisualGDB/Debug/CMakeFiles/CMakeTmp]
+  ignore line: []
+  ignore line: [Run Build Command(s):C:/Program Files (x86)/Sysprogs/VisualGDB/ninja.exe cmTC_f7eae && [1/2] Building C object CMakeFiles/cmTC_f7eae.dir/CMakeCCompilerABI.c.obj]
+  ignore line: [Using built-in specs.]
+  ignore line: [COLLECT_GCC=C:\sysgcc\esp32\opt\xtensa-esp32-elf\bin\xtensa-esp32-elf-gcc.exe]
+  ignore line: [Target: xtensa-esp32-elf]
+  ignore line: [Configured with: /builds/idf/crosstool-NG/.build/src/gcc-5.2.0/configure --build=x86_64-build_pc-linux-gnu --host=i686-host_pc-mingw32 --target=xtensa-esp32-elf --prefix=/builds/idf/crosstool-NG/builds/xtensa-esp32-elf --with-local-prefix=/builds/idf/crosstool-NG/builds/xtensa-esp32-elf/xtensa-esp32-elf/sysroot --with-sysroot=/builds/idf/crosstool-NG/builds/xtensa-esp32-elf/xtensa-esp32-elf/sysroot --with-newlib --enable-threads=no --disable-shared --with-pkgversion='crosstool-NG crosstool-ng-1.22.0-80-g6c4433a5' --disable-__cxa_atexit --enable-cxx-flags='-fno-rtti -ffunction-sections' --with-gmp=/builds/idf/crosstool-NG/.build/xtensa-esp32-elf/buildtools/complibs-host --with-mpfr=/builds/idf/crosstool-NG/.build/xtensa-esp32-elf/buildtools/complibs-host --with-mpc=/builds/idf/crosstool-NG/.build/xtensa-esp32-elf/buildtools/complibs-host --with-isl=/builds/idf/crosstool-NG/.build/xtensa-esp32-elf/buildtools/complibs-host --with-cloog=/builds/idf/crosstool-NG/.build/xtensa-esp32-elf/buildtools/complibs-host --with-libelf=/builds/idf/crosstool-NG/.build/xtensa-esp32-elf/buildtools/complibs-host --enable-lto --enable-target-optspace --without-long-double-128 --disable-libgomp --disable-libmudflap --disable-libssp --disable-libquadmath --disable-libquadmath-support --disable-nls --enable-languages=c,c++ --disable-libstdcxx-verbose --enable-threads=posix --enable-gcov-custom-rtio]
+  ignore line: [Thread model: posix]
+  ignore line: [gcc version 5.2.0 (crosstool-NG crosstool-ng-1.22.0-80-g6c4433a5) ]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_f7eae.dir/CMakeCCompilerABI.c.obj' '-c']
+  ignore line: [ c:/sysgcc/esp32/opt/xtensa-esp32-elf/bin/../libexec/gcc/xtensa-esp32-elf/5.2.0/cc1.exe -quiet -v -iprefix c:\sysgcc\esp32\opt\xtensa-esp32-elf\bin\../lib/gcc/xtensa-esp32-elf/5.2.0/ -isysroot c:\sysgcc\esp32\opt\xtensa-esp32-elf\bin\../xtensa-esp32-elf/sysroot C:/Users/ms/AppData/Local/VisualGDB/CMake/share/cmake-3.15/Modules/CMakeCCompilerABI.c -quiet -dumpbase CMakeCCompilerABI.c -auxbase-strip CMakeFiles/cmTC_f7eae.dir/CMakeCCompilerABI.c.obj -version -o C:\Users\ms\AppData\Local\Temp\cc16fpgR.s]
+  ignore line: [GNU C11 (crosstool-NG crosstool-ng-1.22.0-80-g6c4433a5) version 5.2.0 (xtensa-esp32-elf)]
+  ignore line: [	compiled by GNU C version 6.3.0 20170516, GMP version 6.0.0, MPFR version 3.1.3, MPC version 1.0.3]
+  ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
+  ignore line: [ignoring duplicate directory "c:/sysgcc/esp32/opt/xtensa-esp32-elf/lib/gcc/../../lib/gcc/xtensa-esp32-elf/5.2.0/include"]
+  ignore line: [ignoring nonexistent directory "c:\sysgcc\esp32\opt\xtensa-esp32-elf\bin\../xtensa-esp32-elf/sysroot/builds/idf/crosstool-NG/builds/xtensa-esp32-elf/lib/gcc/xtensa-esp32-elf/5.2.0/../../../../include"]
+  ignore line: [ignoring duplicate directory "c:/sysgcc/esp32/opt/xtensa-esp32-elf/lib/gcc/../../lib/gcc/xtensa-esp32-elf/5.2.0/include-fixed"]
+  ignore line: [ignoring duplicate directory "c:/sysgcc/esp32/opt/xtensa-esp32-elf/lib/gcc/../../lib/gcc/xtensa-esp32-elf/5.2.0/../../../../xtensa-esp32-elf/include"]
+  ignore line: [#include "..." search starts here:]
+  ignore line: [#include <...> search starts here:]
+  ignore line: [ c:\sysgcc\esp32\opt\xtensa-esp32-elf\bin\../lib/gcc/xtensa-esp32-elf/5.2.0/include]
+  ignore line: [ c:\sysgcc\esp32\opt\xtensa-esp32-elf\bin\../lib/gcc/xtensa-esp32-elf/5.2.0/include-fixed]
+  ignore line: [ c:\sysgcc\esp32\opt\xtensa-esp32-elf\bin\../lib/gcc/xtensa-esp32-elf/5.2.0/../../../../xtensa-esp32-elf/include]
+  ignore line: [ c:\sysgcc\esp32\opt\xtensa-esp32-elf\bin\../xtensa-esp32-elf/sysroot/usr/include]
+  ignore line: [End of search list.]
+  ignore line: [GNU C11 (crosstool-NG crosstool-ng-1.22.0-80-g6c4433a5) version 5.2.0 (xtensa-esp32-elf)]
+  ignore line: [	compiled by GNU C version 6.3.0 20170516, GMP version 6.0.0, MPFR version 3.1.3, MPC version 1.0.3]
+  ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
+  ignore line: [Compiler executable checksum: f8c150667b22ef24be0575fd93addc63]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_f7eae.dir/CMakeCCompilerABI.c.obj' '-c']
+  ignore line: [ c:/sysgcc/esp32/opt/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/5.2.0/../../../../xtensa-esp32-elf/bin/as.exe --traditional-format -o CMakeFiles/cmTC_f7eae.dir/CMakeCCompilerABI.c.obj C:\Users\ms\AppData\Local\Temp\cc16fpgR.s]
+  ignore line: [COMPILER_PATH=c:/sysgcc/esp32/opt/xtensa-esp32-elf/bin/../libexec/gcc/xtensa-esp32-elf/5.2.0/]
+  ignore line: [c:/sysgcc/esp32/opt/xtensa-esp32-elf/bin/../libexec/gcc/]
+  ignore line: [c:/sysgcc/esp32/opt/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/5.2.0/../../../../xtensa-esp32-elf/bin/]
+  ignore line: [LIBRARY_PATH=c:/sysgcc/esp32/opt/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/5.2.0/]
+  ignore line: [c:/sysgcc/esp32/opt/xtensa-esp32-elf/bin/../lib/gcc/]
+  ignore line: [c:/sysgcc/esp32/opt/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/5.2.0/../../../../xtensa-esp32-elf/lib/]
+  ignore line: [c:/sysgcc/esp32/opt/xtensa-esp32-elf/bin/../xtensa-esp32-elf/sysroot/lib/]
+  ignore line: [c:/sysgcc/esp32/opt/xtensa-esp32-elf/bin/../xtensa-esp32-elf/sysroot/usr/lib/]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_f7eae.dir/CMakeCCompilerABI.c.obj' '-c']
+  ignore line: [[2/2] Linking C executable cmTC_f7eae]
+  ignore line: [Using built-in specs.]
+  ignore line: [COLLECT_GCC=C:\sysgcc\esp32\opt\xtensa-esp32-elf\bin\xtensa-esp32-elf-gcc.exe]
+  ignore line: [COLLECT_LTO_WRAPPER=c:/sysgcc/esp32/opt/xtensa-esp32-elf/bin/../libexec/gcc/xtensa-esp32-elf/5.2.0/lto-wrapper.exe]
+  ignore line: [Target: xtensa-esp32-elf]
+  ignore line: [Configured with: /builds/idf/crosstool-NG/.build/src/gcc-5.2.0/configure --build=x86_64-build_pc-linux-gnu --host=i686-host_pc-mingw32 --target=xtensa-esp32-elf --prefix=/builds/idf/crosstool-NG/builds/xtensa-esp32-elf --with-local-prefix=/builds/idf/crosstool-NG/builds/xtensa-esp32-elf/xtensa-esp32-elf/sysroot --with-sysroot=/builds/idf/crosstool-NG/builds/xtensa-esp32-elf/xtensa-esp32-elf/sysroot --with-newlib --enable-threads=no --disable-shared --with-pkgversion='crosstool-NG crosstool-ng-1.22.0-80-g6c4433a5' --disable-__cxa_atexit --enable-cxx-flags='-fno-rtti -ffunction-sections' --with-gmp=/builds/idf/crosstool-NG/.build/xtensa-esp32-elf/buildtools/complibs-host --with-mpfr=/builds/idf/crosstool-NG/.build/xtensa-esp32-elf/buildtools/complibs-host --with-mpc=/builds/idf/crosstool-NG/.build/xtensa-esp32-elf/buildtools/complibs-host --with-isl=/builds/idf/crosstool-NG/.build/xtensa-esp32-elf/buildtools/complibs-host --with-cloog=/builds/idf/crosstool-NG/.build/xtensa-esp32-elf/buildtools/complibs-host --with-libelf=/builds/idf/crosstool-NG/.build/xtensa-esp32-elf/buildtools/complibs-host --enable-lto --enable-target-optspace --without-long-double-128 --disable-libgomp --disable-libmudflap --disable-libssp --disable-libquadmath --disable-libquadmath-support --disable-nls --enable-languages=c,c++ --disable-libstdcxx-verbose --enable-threads=posix --enable-gcov-custom-rtio]
+  ignore line: [Thread model: posix]
+  ignore line: [gcc version 5.2.0 (crosstool-NG crosstool-ng-1.22.0-80-g6c4433a5) ]
+  ignore line: [COMPILER_PATH=c:/sysgcc/esp32/opt/xtensa-esp32-elf/bin/../libexec/gcc/xtensa-esp32-elf/5.2.0/]
+  ignore line: [c:/sysgcc/esp32/opt/xtensa-esp32-elf/bin/../libexec/gcc/]
+  ignore line: [c:/sysgcc/esp32/opt/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/5.2.0/../../../../xtensa-esp32-elf/bin/]
+  ignore line: [LIBRARY_PATH=c:/sysgcc/esp32/opt/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/5.2.0/]
+  ignore line: [c:/sysgcc/esp32/opt/xtensa-esp32-elf/bin/../lib/gcc/]
+  ignore line: [c:/sysgcc/esp32/opt/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/5.2.0/../../../../xtensa-esp32-elf/lib/]
+  ignore line: [c:/sysgcc/esp32/opt/xtensa-esp32-elf/bin/../xtensa-esp32-elf/sysroot/lib/]
+  ignore line: [c:/sysgcc/esp32/opt/xtensa-esp32-elf/bin/../xtensa-esp32-elf/sysroot/usr/lib/]
+  ignore line: [COLLECT_GCC_OPTIONS='-nostdlib' '-v' '-o' 'cmTC_f7eae']
+  link line: [ c:/sysgcc/esp32/opt/xtensa-esp32-elf/bin/../libexec/gcc/xtensa-esp32-elf/5.2.0/collect2.exe -plugin c:/sysgcc/esp32/opt/xtensa-esp32-elf/bin/../libexec/gcc/xtensa-esp32-elf/5.2.0/liblto_plugin-0.dll -plugin-opt=c:/sysgcc/esp32/opt/xtensa-esp32-elf/bin/../libexec/gcc/xtensa-esp32-elf/5.2.0/lto-wrapper.exe -plugin-opt=-fresolution=C:\Users\ms\AppData\Local\Temp\ccvC03C1.res --sysroot=c:\sysgcc\esp32\opt\xtensa-esp32-elf\bin\../xtensa-esp32-elf/sysroot -o cmTC_f7eae -Lc:/sysgcc/esp32/opt/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/5.2.0 -Lc:/sysgcc/esp32/opt/xtensa-esp32-elf/bin/../lib/gcc -Lc:/sysgcc/esp32/opt/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/5.2.0/../../../../xtensa-esp32-elf/lib -Lc:/sysgcc/esp32/opt/xtensa-esp32-elf/bin/../xtensa-esp32-elf/sysroot/lib -Lc:/sysgcc/esp32/opt/xtensa-esp32-elf/bin/../xtensa-esp32-elf/sysroot/usr/lib CMakeFiles/cmTC_f7eae.dir/CMakeCCompilerABI.c.obj]
+    arg [c:/sysgcc/esp32/opt/xtensa-esp32-elf/bin/../libexec/gcc/xtensa-esp32-elf/5.2.0/collect2.exe] ==> ignore
+    arg [-plugin] ==> ignore
+    arg [c:/sysgcc/esp32/opt/xtensa-esp32-elf/bin/../libexec/gcc/xtensa-esp32-elf/5.2.0/liblto_plugin-0.dll] ==> ignore
+    arg [-plugin-opt=c:/sysgcc/esp32/opt/xtensa-esp32-elf/bin/../libexec/gcc/xtensa-esp32-elf/5.2.0/lto-wrapper.exe] ==> ignore
+    arg [-plugin-opt=-fresolution=C:\Users\ms\AppData\Local\Temp\ccvC03C1.res] ==> ignore
+    arg [--sysroot=c:\sysgcc\esp32\opt\xtensa-esp32-elf\bin\../xtensa-esp32-elf/sysroot] ==> ignore
+    arg [-o] ==> ignore
+    arg [cmTC_f7eae] ==> ignore
+    arg [-Lc:/sysgcc/esp32/opt/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/5.2.0] ==> dir [c:/sysgcc/esp32/opt/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/5.2.0]
+    arg [-Lc:/sysgcc/esp32/opt/xtensa-esp32-elf/bin/../lib/gcc] ==> dir [c:/sysgcc/esp32/opt/xtensa-esp32-elf/bin/../lib/gcc]
+    arg [-Lc:/sysgcc/esp32/opt/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/5.2.0/../../../../xtensa-esp32-elf/lib] ==> dir [c:/sysgcc/esp32/opt/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/5.2.0/../../../../xtensa-esp32-elf/lib]
+    arg [-Lc:/sysgcc/esp32/opt/xtensa-esp32-elf/bin/../xtensa-esp32-elf/sysroot/lib] ==> dir [c:/sysgcc/esp32/opt/xtensa-esp32-elf/bin/../xtensa-esp32-elf/sysroot/lib]
+    arg [-Lc:/sysgcc/esp32/opt/xtensa-esp32-elf/bin/../xtensa-esp32-elf/sysroot/usr/lib] ==> dir [c:/sysgcc/esp32/opt/xtensa-esp32-elf/bin/../xtensa-esp32-elf/sysroot/usr/lib]
+    arg [CMakeFiles/cmTC_f7eae.dir/CMakeCCompilerABI.c.obj] ==> ignore
+  collapse library dir [c:/sysgcc/esp32/opt/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/5.2.0] ==> [C:/sysgcc/esp32/opt/xtensa-esp32-elf/lib/gcc/xtensa-esp32-elf/5.2.0]
+  collapse library dir [c:/sysgcc/esp32/opt/xtensa-esp32-elf/bin/../lib/gcc] ==> [C:/sysgcc/esp32/opt/xtensa-esp32-elf/lib/gcc]
+  collapse library dir [c:/sysgcc/esp32/opt/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/5.2.0/../../../../xtensa-esp32-elf/lib] ==> [C:/sysgcc/esp32/opt/xtensa-esp32-elf/xtensa-esp32-elf/lib]
+  collapse library dir [c:/sysgcc/esp32/opt/xtensa-esp32-elf/bin/../xtensa-esp32-elf/sysroot/lib] ==> [C:/sysgcc/esp32/opt/xtensa-esp32-elf/xtensa-esp32-elf/sysroot/lib]
+  collapse library dir [c:/sysgcc/esp32/opt/xtensa-esp32-elf/bin/../xtensa-esp32-elf/sysroot/usr/lib] ==> [C:/sysgcc/esp32/opt/xtensa-esp32-elf/xtensa-esp32-elf/sysroot/usr/lib]
+  implicit libs: []
+  implicit dirs: [C:/sysgcc/esp32/opt/xtensa-esp32-elf/lib/gcc/xtensa-esp32-elf/5.2.0;C:/sysgcc/esp32/opt/xtensa-esp32-elf/lib/gcc;C:/sysgcc/esp32/opt/xtensa-esp32-elf/xtensa-esp32-elf/lib;C:/sysgcc/esp32/opt/xtensa-esp32-elf/xtensa-esp32-elf/sysroot/lib;C:/sysgcc/esp32/opt/xtensa-esp32-elf/xtensa-esp32-elf/sysroot/usr/lib]
+  implicit fwks: []
+
+
+Determining if the CXX compiler works passed with the following output:
+Change Dir: C:/Users/ms/source/repos/SRO/MK2/VisualGDB/Debug/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:/Program Files (x86)/Sysprogs/VisualGDB/ninja.exe cmTC_530ae && [1/2] Building CXX object CMakeFiles/cmTC_530ae.dir/testCXXCompiler.cxx.obj
+[2/2] Linking CXX executable cmTC_530ae
+c:/sysgcc/esp32/opt/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/5.2.0/../../../../xtensa-esp32-elf/bin/ld.exe: warning: cannot find entry symbol _start; defaulting to 00400054
+
+
+
+Detecting CXX compiler ABI info compiled with the following output:
+Change Dir: C:/Users/ms/source/repos/SRO/MK2/VisualGDB/Debug/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:/Program Files (x86)/Sysprogs/VisualGDB/ninja.exe cmTC_3ace4 && [1/2] Building CXX object CMakeFiles/cmTC_3ace4.dir/CMakeCXXCompilerABI.cpp.obj
+Using built-in specs.
+COLLECT_GCC=C:\sysgcc\esp32\opt\xtensa-esp32-elf\bin\xtensa-esp32-elf-g++.exe
+Target: xtensa-esp32-elf
+Configured with: /builds/idf/crosstool-NG/.build/src/gcc-5.2.0/configure --build=x86_64-build_pc-linux-gnu --host=i686-host_pc-mingw32 --target=xtensa-esp32-elf --prefix=/builds/idf/crosstool-NG/builds/xtensa-esp32-elf --with-local-prefix=/builds/idf/crosstool-NG/builds/xtensa-esp32-elf/xtensa-esp32-elf/sysroot --with-sysroot=/builds/idf/crosstool-NG/builds/xtensa-esp32-elf/xtensa-esp32-elf/sysroot --with-newlib --enable-threads=no --disable-shared --with-pkgversion='crosstool-NG crosstool-ng-1.22.0-80-g6c4433a5' --disable-__cxa_atexit --enable-cxx-flags='-fno-rtti -ffunction-sections' --with-gmp=/builds/idf/crosstool-NG/.build/xtensa-esp32-elf/buildtools/complibs-host --with-mpfr=/builds/idf/crosstool-NG/.build/xtensa-esp32-elf/buildtools/complibs-host --with-mpc=/builds/idf/crosstool-NG/.build/xtensa-esp32-elf/buildtools/complibs-host --with-isl=/builds/idf/crosstool-NG/.build/xtensa-esp32-elf/buildtools/complibs-host --with-cloog=/builds/idf/crosstool-NG/.build/xtensa-esp32-elf/buildtools/complibs-host --with-libelf=/builds/idf/crosstool-NG/.build/xtensa-esp32-elf/buildtools/complibs-host --enable-lto --enable-target-optspace --without-long-double-128 --disable-libgomp --disable-libmudflap --disable-libssp --disable-libquadmath --disable-libquadmath-support --disable-nls --enable-languages=c,c++ --disable-libstdcxx-verbose --enable-threads=posix --enable-gcov-custom-rtio
+Thread model: posix
+gcc version 5.2.0 (crosstool-NG crosstool-ng-1.22.0-80-g6c4433a5) 
+COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_3ace4.dir/CMakeCXXCompilerABI.cpp.obj' '-c'
+ c:/sysgcc/esp32/opt/xtensa-esp32-elf/bin/../libexec/gcc/xtensa-esp32-elf/5.2.0/cc1plus.exe -quiet -v -iprefix c:\sysgcc\esp32\opt\xtensa-esp32-elf\bin\../lib/gcc/xtensa-esp32-elf/5.2.0/ -isysroot c:\sysgcc\esp32\opt\xtensa-esp32-elf\bin\../xtensa-esp32-elf/sysroot C:/Users/ms/AppData/Local/VisualGDB/CMake/share/cmake-3.15/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpbase CMakeCXXCompilerABI.cpp -auxbase-strip CMakeFiles/cmTC_3ace4.dir/CMakeCXXCompilerABI.cpp.obj -version -o C:\Users\ms\AppData\Local\Temp\ccGnXShr.s
+GNU C++ (crosstool-NG crosstool-ng-1.22.0-80-g6c4433a5) version 5.2.0 (xtensa-esp32-elf)
+	compiled by GNU C version 6.3.0 20170516, GMP version 6.0.0, MPFR version 3.1.3, MPC version 1.0.3
+GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+ignoring duplicate directory "c:/sysgcc/esp32/opt/xtensa-esp32-elf/lib/gcc/../../lib/gcc/xtensa-esp32-elf/5.2.0/../../../../xtensa-esp32-elf/include/c++/5.2.0"
+ignoring duplicate directory "c:/sysgcc/esp32/opt/xtensa-esp32-elf/lib/gcc/../../lib/gcc/xtensa-esp32-elf/5.2.0/../../../../xtensa-esp32-elf/include/c++/5.2.0/xtensa-esp32-elf"
+ignoring duplicate directory "c:/sysgcc/esp32/opt/xtensa-esp32-elf/lib/gcc/../../lib/gcc/xtensa-esp32-elf/5.2.0/../../../../xtensa-esp32-elf/include/c++/5.2.0/backward"
+ignoring duplicate directory "c:/sysgcc/esp32/opt/xtensa-esp32-elf/lib/gcc/../../lib/gcc/xtensa-esp32-elf/5.2.0/include"
+ignoring nonexistent directory "c:\sysgcc\esp32\opt\xtensa-esp32-elf\bin\../xtensa-esp32-elf/sysroot/builds/idf/crosstool-NG/builds/xtensa-esp32-elf/lib/gcc/xtensa-esp32-elf/5.2.0/../../../../include"
+ignoring duplicate directory "c:/sysgcc/esp32/opt/xtensa-esp32-elf/lib/gcc/../../lib/gcc/xtensa-esp32-elf/5.2.0/include-fixed"
+ignoring duplicate directory "c:/sysgcc/esp32/opt/xtensa-esp32-elf/lib/gcc/../../lib/gcc/xtensa-esp32-elf/5.2.0/../../../../xtensa-esp32-elf/include"
+#include "..." search starts here:
+#include <...> search starts here:
+ c:\sysgcc\esp32\opt\xtensa-esp32-elf\bin\../lib/gcc/xtensa-esp32-elf/5.2.0/../../../../xtensa-esp32-elf/include/c++/5.2.0
+ c:\sysgcc\esp32\opt\xtensa-esp32-elf\bin\../lib/gcc/xtensa-esp32-elf/5.2.0/../../../../xtensa-esp32-elf/include/c++/5.2.0/xtensa-esp32-elf
+ c:\sysgcc\esp32\opt\xtensa-esp32-elf\bin\../lib/gcc/xtensa-esp32-elf/5.2.0/../../../../xtensa-esp32-elf/include/c++/5.2.0/backward
+ c:\sysgcc\esp32\opt\xtensa-esp32-elf\bin\../lib/gcc/xtensa-esp32-elf/5.2.0/include
+ c:\sysgcc\esp32\opt\xtensa-esp32-elf\bin\../lib/gcc/xtensa-esp32-elf/5.2.0/include-fixed
+ c:\sysgcc\esp32\opt\xtensa-esp32-elf\bin\../lib/gcc/xtensa-esp32-elf/5.2.0/../../../../xtensa-esp32-elf/include
+ c:\sysgcc\esp32\opt\xtensa-esp32-elf\bin\../xtensa-esp32-elf/sysroot/usr/include
+End of search list.
+GNU C++ (crosstool-NG crosstool-ng-1.22.0-80-g6c4433a5) version 5.2.0 (xtensa-esp32-elf)
+	compiled by GNU C version 6.3.0 20170516, GMP version 6.0.0, MPFR version 3.1.3, MPC version 1.0.3
+GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+Compiler executable checksum: 866bbe3466f64d6eb8ddac865872a52a
+COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_3ace4.dir/CMakeCXXCompilerABI.cpp.obj' '-c'
+ c:/sysgcc/esp32/opt/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/5.2.0/../../../../xtensa-esp32-elf/bin/as.exe --traditional-format -o CMakeFiles/cmTC_3ace4.dir/CMakeCXXCompilerABI.cpp.obj C:\Users\ms\AppData\Local\Temp\ccGnXShr.s
+COMPILER_PATH=c:/sysgcc/esp32/opt/xtensa-esp32-elf/bin/../libexec/gcc/xtensa-esp32-elf/5.2.0/;c:/sysgcc/esp32/opt/xtensa-esp32-elf/bin/../libexec/gcc/;c:/sysgcc/esp32/opt/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/5.2.0/../../../../xtensa-esp32-elf/bin/
+LIBRARY_PATH=c:/sysgcc/esp32/opt/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/5.2.0/;c:/sysgcc/esp32/opt/xtensa-esp32-elf/bin/../lib/gcc/;c:/sysgcc/esp32/opt/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/5.2.0/../../../../xtensa-esp32-elf/lib/;c:/sysgcc/esp32/opt/xtensa-esp32-elf/bin/../xtensa-esp32-elf/sysroot/lib/;c:/sysgcc/esp32/opt/xtensa-esp32-elf/bin/../xtensa-esp32-elf/sysroot/usr/lib/
+COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_3ace4.dir/CMakeCXXCompilerABI.cpp.obj' '-c'
+[2/2] Linking CXX executable cmTC_3ace4
+Using built-in specs.
+COLLECT_GCC=C:\sysgcc\esp32\opt\xtensa-esp32-elf\bin\xtensa-esp32-elf-g++.exe
+COLLECT_LTO_WRAPPER=c:/sysgcc/esp32/opt/xtensa-esp32-elf/bin/../libexec/gcc/xtensa-esp32-elf/5.2.0/lto-wrapper.exe
+Target: xtensa-esp32-elf
+Configured with: /builds/idf/crosstool-NG/.build/src/gcc-5.2.0/configure --build=x86_64-build_pc-linux-gnu --host=i686-host_pc-mingw32 --target=xtensa-esp32-elf --prefix=/builds/idf/crosstool-NG/builds/xtensa-esp32-elf --with-local-prefix=/builds/idf/crosstool-NG/builds/xtensa-esp32-elf/xtensa-esp32-elf/sysroot --with-sysroot=/builds/idf/crosstool-NG/builds/xtensa-esp32-elf/xtensa-esp32-elf/sysroot --with-newlib --enable-threads=no --disable-shared --with-pkgversion='crosstool-NG crosstool-ng-1.22.0-80-g6c4433a5' --disable-__cxa_atexit --enable-cxx-flags='-fno-rtti -ffunction-sections' --with-gmp=/builds/idf/crosstool-NG/.build/xtensa-esp32-elf/buildtools/complibs-host --with-mpfr=/builds/idf/crosstool-NG/.build/xtensa-esp32-elf/buildtools/complibs-host --with-mpc=/builds/idf/crosstool-NG/.build/xtensa-esp32-elf/buildtools/complibs-host --with-isl=/builds/idf/crosstool-NG/.build/xtensa-esp32-elf/buildtools/complibs-host --with-cloog=/builds/idf/crosstool-NG/.build/xtensa-esp32-elf/buildtools/complibs-host --with-libelf=/builds/idf/crosstool-NG/.build/xtensa-esp32-elf/buildtools/complibs-host --enable-lto --enable-target-optspace --without-long-double-128 --disable-libgomp --disable-libmudflap --disable-libssp --disable-libquadmath --disable-libquadmath-support --disable-nls --enable-languages=c,c++ --disable-libstdcxx-verbose --enable-threads=posix --enable-gcov-custom-rtio
+Thread model: posix
+gcc version 5.2.0 (crosstool-NG crosstool-ng-1.22.0-80-g6c4433a5) 
+COMPILER_PATH=c:/sysgcc/esp32/opt/xtensa-esp32-elf/bin/../libexec/gcc/xtensa-esp32-elf/5.2.0/;c:/sysgcc/esp32/opt/xtensa-esp32-elf/bin/../libexec/gcc/;c:/sysgcc/esp32/opt/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/5.2.0/../../../../xtensa-esp32-elf/bin/
+LIBRARY_PATH=c:/sysgcc/esp32/opt/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/5.2.0/;c:/sysgcc/esp32/opt/xtensa-esp32-elf/bin/../lib/gcc/;c:/sysgcc/esp32/opt/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/5.2.0/../../../../xtensa-esp32-elf/lib/;c:/sysgcc/esp32/opt/xtensa-esp32-elf/bin/../xtensa-esp32-elf/sysroot/lib/;c:/sysgcc/esp32/opt/xtensa-esp32-elf/bin/../xtensa-esp32-elf/sysroot/usr/lib/
+COLLECT_GCC_OPTIONS='-nostdlib' '-v' '-o' 'cmTC_3ace4'
+ c:/sysgcc/esp32/opt/xtensa-esp32-elf/bin/../libexec/gcc/xtensa-esp32-elf/5.2.0/collect2.exe -plugin c:/sysgcc/esp32/opt/xtensa-esp32-elf/bin/../libexec/gcc/xtensa-esp32-elf/5.2.0/liblto_plugin-0.dll -plugin-opt=c:/sysgcc/esp32/opt/xtensa-esp32-elf/bin/../libexec/gcc/xtensa-esp32-elf/5.2.0/lto-wrapper.exe -plugin-opt=-fresolution=C:\Users\ms\AppData\Local\Temp\ccu9jF6z.res --sysroot=c:\sysgcc\esp32\opt\xtensa-esp32-elf\bin\../xtensa-esp32-elf/sysroot -o cmTC_3ace4 -Lc:/sysgcc/esp32/opt/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/5.2.0 -Lc:/sysgcc/esp32/opt/xtensa-esp32-elf/bin/../lib/gcc -Lc:/sysgcc/esp32/opt/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/5.2.0/../../../../xtensa-esp32-elf/lib -Lc:/sysgcc/esp32/opt/xtensa-esp32-elf/bin/../xtensa-esp32-elf/sysroot/lib -Lc:/sysgcc/esp32/opt/xtensa-esp32-elf/bin/../xtensa-esp32-elf/sysroot/usr/lib CMakeFiles/cmTC_3ace4.dir/CMakeCXXCompilerABI.cpp.obj
+c:/sysgcc/esp32/opt/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/5.2.0/../../../../xtensa-esp32-elf/bin/ld.exe: warning: cannot find entry symbol _start; defaulting to 00400074
+
+
+
+Parsed CXX implicit include dir info from above output: rv=done
+  found start of include info
+  found start of implicit include info
+    add: [c:/sysgcc/esp32/opt/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/5.2.0/../../../../xtensa-esp32-elf/include/c++/5.2.0]
+    add: [c:/sysgcc/esp32/opt/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/5.2.0/../../../../xtensa-esp32-elf/include/c++/5.2.0/xtensa-esp32-elf]
+    add: [c:/sysgcc/esp32/opt/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/5.2.0/../../../../xtensa-esp32-elf/include/c++/5.2.0/backward]
+    add: [c:/sysgcc/esp32/opt/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/5.2.0/include]
+    add: [c:/sysgcc/esp32/opt/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/5.2.0/include-fixed]
+    add: [c:/sysgcc/esp32/opt/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/5.2.0/../../../../xtensa-esp32-elf/include]
+    add: [c:/sysgcc/esp32/opt/xtensa-esp32-elf/bin/../xtensa-esp32-elf/sysroot/usr/include]
+  end of search list found
+  collapse include dir [c:/sysgcc/esp32/opt/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/5.2.0/../../../../xtensa-esp32-elf/include/c++/5.2.0] ==> [C:/sysgcc/esp32/opt/xtensa-esp32-elf/xtensa-esp32-elf/include/c++/5.2.0]
+  collapse include dir [c:/sysgcc/esp32/opt/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/5.2.0/../../../../xtensa-esp32-elf/include/c++/5.2.0/xtensa-esp32-elf] ==> [C:/sysgcc/esp32/opt/xtensa-esp32-elf/xtensa-esp32-elf/include/c++/5.2.0/xtensa-esp32-elf]
+  collapse include dir [c:/sysgcc/esp32/opt/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/5.2.0/../../../../xtensa-esp32-elf/include/c++/5.2.0/backward] ==> [C:/sysgcc/esp32/opt/xtensa-esp32-elf/xtensa-esp32-elf/include/c++/5.2.0/backward]
+  collapse include dir [c:/sysgcc/esp32/opt/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/5.2.0/include] ==> [C:/sysgcc/esp32/opt/xtensa-esp32-elf/lib/gcc/xtensa-esp32-elf/5.2.0/include]
+  collapse include dir [c:/sysgcc/esp32/opt/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/5.2.0/include-fixed] ==> [C:/sysgcc/esp32/opt/xtensa-esp32-elf/lib/gcc/xtensa-esp32-elf/5.2.0/include-fixed]
+  collapse include dir [c:/sysgcc/esp32/opt/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/5.2.0/../../../../xtensa-esp32-elf/include] ==> [C:/sysgcc/esp32/opt/xtensa-esp32-elf/xtensa-esp32-elf/include]
+  collapse include dir [c:/sysgcc/esp32/opt/xtensa-esp32-elf/bin/../xtensa-esp32-elf/sysroot/usr/include] ==> [C:/sysgcc/esp32/opt/xtensa-esp32-elf/xtensa-esp32-elf/sysroot/usr/include]
+  implicit include dirs: [C:/sysgcc/esp32/opt/xtensa-esp32-elf/xtensa-esp32-elf/include/c++/5.2.0;C:/sysgcc/esp32/opt/xtensa-esp32-elf/xtensa-esp32-elf/include/c++/5.2.0/xtensa-esp32-elf;C:/sysgcc/esp32/opt/xtensa-esp32-elf/xtensa-esp32-elf/include/c++/5.2.0/backward;C:/sysgcc/esp32/opt/xtensa-esp32-elf/lib/gcc/xtensa-esp32-elf/5.2.0/include;C:/sysgcc/esp32/opt/xtensa-esp32-elf/lib/gcc/xtensa-esp32-elf/5.2.0/include-fixed;C:/sysgcc/esp32/opt/xtensa-esp32-elf/xtensa-esp32-elf/include;C:/sysgcc/esp32/opt/xtensa-esp32-elf/xtensa-esp32-elf/sysroot/usr/include]
+
+
+Parsed CXX implicit link information from above output:
+  link line regex: [^( *|.*[/\])(xtensa-esp32-elf-ld\.exe|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\]+-)?ld|collect2)[^/\]*( |$)]
+  ignore line: [Change Dir: C:/Users/ms/source/repos/SRO/MK2/VisualGDB/Debug/CMakeFiles/CMakeTmp]
+  ignore line: []
+  ignore line: [Run Build Command(s):C:/Program Files (x86)/Sysprogs/VisualGDB/ninja.exe cmTC_3ace4 && [1/2] Building CXX object CMakeFiles/cmTC_3ace4.dir/CMakeCXXCompilerABI.cpp.obj]
+  ignore line: [Using built-in specs.]
+  ignore line: [COLLECT_GCC=C:\sysgcc\esp32\opt\xtensa-esp32-elf\bin\xtensa-esp32-elf-g++.exe]
+  ignore line: [Target: xtensa-esp32-elf]
+  ignore line: [Configured with: /builds/idf/crosstool-NG/.build/src/gcc-5.2.0/configure --build=x86_64-build_pc-linux-gnu --host=i686-host_pc-mingw32 --target=xtensa-esp32-elf --prefix=/builds/idf/crosstool-NG/builds/xtensa-esp32-elf --with-local-prefix=/builds/idf/crosstool-NG/builds/xtensa-esp32-elf/xtensa-esp32-elf/sysroot --with-sysroot=/builds/idf/crosstool-NG/builds/xtensa-esp32-elf/xtensa-esp32-elf/sysroot --with-newlib --enable-threads=no --disable-shared --with-pkgversion='crosstool-NG crosstool-ng-1.22.0-80-g6c4433a5' --disable-__cxa_atexit --enable-cxx-flags='-fno-rtti -ffunction-sections' --with-gmp=/builds/idf/crosstool-NG/.build/xtensa-esp32-elf/buildtools/complibs-host --with-mpfr=/builds/idf/crosstool-NG/.build/xtensa-esp32-elf/buildtools/complibs-host --with-mpc=/builds/idf/crosstool-NG/.build/xtensa-esp32-elf/buildtools/complibs-host --with-isl=/builds/idf/crosstool-NG/.build/xtensa-esp32-elf/buildtools/complibs-host --with-cloog=/builds/idf/crosstool-NG/.build/xtensa-esp32-elf/buildtools/complibs-host --with-libelf=/builds/idf/crosstool-NG/.build/xtensa-esp32-elf/buildtools/complibs-host --enable-lto --enable-target-optspace --without-long-double-128 --disable-libgomp --disable-libmudflap --disable-libssp --disable-libquadmath --disable-libquadmath-support --disable-nls --enable-languages=c,c++ --disable-libstdcxx-verbose --enable-threads=posix --enable-gcov-custom-rtio]
+  ignore line: [Thread model: posix]
+  ignore line: [gcc version 5.2.0 (crosstool-NG crosstool-ng-1.22.0-80-g6c4433a5) ]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_3ace4.dir/CMakeCXXCompilerABI.cpp.obj' '-c']
+  ignore line: [ c:/sysgcc/esp32/opt/xtensa-esp32-elf/bin/../libexec/gcc/xtensa-esp32-elf/5.2.0/cc1plus.exe -quiet -v -iprefix c:\sysgcc\esp32\opt\xtensa-esp32-elf\bin\../lib/gcc/xtensa-esp32-elf/5.2.0/ -isysroot c:\sysgcc\esp32\opt\xtensa-esp32-elf\bin\../xtensa-esp32-elf/sysroot C:/Users/ms/AppData/Local/VisualGDB/CMake/share/cmake-3.15/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpbase CMakeCXXCompilerABI.cpp -auxbase-strip CMakeFiles/cmTC_3ace4.dir/CMakeCXXCompilerABI.cpp.obj -version -o C:\Users\ms\AppData\Local\Temp\ccGnXShr.s]
+  ignore line: [GNU C++ (crosstool-NG crosstool-ng-1.22.0-80-g6c4433a5) version 5.2.0 (xtensa-esp32-elf)]
+  ignore line: [	compiled by GNU C version 6.3.0 20170516, GMP version 6.0.0, MPFR version 3.1.3, MPC version 1.0.3]
+  ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
+  ignore line: [ignoring duplicate directory "c:/sysgcc/esp32/opt/xtensa-esp32-elf/lib/gcc/../../lib/gcc/xtensa-esp32-elf/5.2.0/../../../../xtensa-esp32-elf/include/c++/5.2.0"]
+  ignore line: [ignoring duplicate directory "c:/sysgcc/esp32/opt/xtensa-esp32-elf/lib/gcc/../../lib/gcc/xtensa-esp32-elf/5.2.0/../../../../xtensa-esp32-elf/include/c++/5.2.0/xtensa-esp32-elf"]
+  ignore line: [ignoring duplicate directory "c:/sysgcc/esp32/opt/xtensa-esp32-elf/lib/gcc/../../lib/gcc/xtensa-esp32-elf/5.2.0/../../../../xtensa-esp32-elf/include/c++/5.2.0/backward"]
+  ignore line: [ignoring duplicate directory "c:/sysgcc/esp32/opt/xtensa-esp32-elf/lib/gcc/../../lib/gcc/xtensa-esp32-elf/5.2.0/include"]
+  ignore line: [ignoring nonexistent directory "c:\sysgcc\esp32\opt\xtensa-esp32-elf\bin\../xtensa-esp32-elf/sysroot/builds/idf/crosstool-NG/builds/xtensa-esp32-elf/lib/gcc/xtensa-esp32-elf/5.2.0/../../../../include"]
+  ignore line: [ignoring duplicate directory "c:/sysgcc/esp32/opt/xtensa-esp32-elf/lib/gcc/../../lib/gcc/xtensa-esp32-elf/5.2.0/include-fixed"]
+  ignore line: [ignoring duplicate directory "c:/sysgcc/esp32/opt/xtensa-esp32-elf/lib/gcc/../../lib/gcc/xtensa-esp32-elf/5.2.0/../../../../xtensa-esp32-elf/include"]
+  ignore line: [#include "..." search starts here:]
+  ignore line: [#include <...> search starts here:]
+  ignore line: [ c:\sysgcc\esp32\opt\xtensa-esp32-elf\bin\../lib/gcc/xtensa-esp32-elf/5.2.0/../../../../xtensa-esp32-elf/include/c++/5.2.0]
+  ignore line: [ c:\sysgcc\esp32\opt\xtensa-esp32-elf\bin\../lib/gcc/xtensa-esp32-elf/5.2.0/../../../../xtensa-esp32-elf/include/c++/5.2.0/xtensa-esp32-elf]
+  ignore line: [ c:\sysgcc\esp32\opt\xtensa-esp32-elf\bin\../lib/gcc/xtensa-esp32-elf/5.2.0/../../../../xtensa-esp32-elf/include/c++/5.2.0/backward]
+  ignore line: [ c:\sysgcc\esp32\opt\xtensa-esp32-elf\bin\../lib/gcc/xtensa-esp32-elf/5.2.0/include]
+  ignore line: [ c:\sysgcc\esp32\opt\xtensa-esp32-elf\bin\../lib/gcc/xtensa-esp32-elf/5.2.0/include-fixed]
+  ignore line: [ c:\sysgcc\esp32\opt\xtensa-esp32-elf\bin\../lib/gcc/xtensa-esp32-elf/5.2.0/../../../../xtensa-esp32-elf/include]
+  ignore line: [ c:\sysgcc\esp32\opt\xtensa-esp32-elf\bin\../xtensa-esp32-elf/sysroot/usr/include]
+  ignore line: [End of search list.]
+  ignore line: [GNU C++ (crosstool-NG crosstool-ng-1.22.0-80-g6c4433a5) version 5.2.0 (xtensa-esp32-elf)]
+  ignore line: [	compiled by GNU C version 6.3.0 20170516, GMP version 6.0.0, MPFR version 3.1.3, MPC version 1.0.3]
+  ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
+  ignore line: [Compiler executable checksum: 866bbe3466f64d6eb8ddac865872a52a]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_3ace4.dir/CMakeCXXCompilerABI.cpp.obj' '-c']
+  ignore line: [ c:/sysgcc/esp32/opt/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/5.2.0/../../../../xtensa-esp32-elf/bin/as.exe --traditional-format -o CMakeFiles/cmTC_3ace4.dir/CMakeCXXCompilerABI.cpp.obj C:\Users\ms\AppData\Local\Temp\ccGnXShr.s]
+  ignore line: [COMPILER_PATH=c:/sysgcc/esp32/opt/xtensa-esp32-elf/bin/../libexec/gcc/xtensa-esp32-elf/5.2.0/]
+  ignore line: [c:/sysgcc/esp32/opt/xtensa-esp32-elf/bin/../libexec/gcc/]
+  ignore line: [c:/sysgcc/esp32/opt/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/5.2.0/../../../../xtensa-esp32-elf/bin/]
+  ignore line: [LIBRARY_PATH=c:/sysgcc/esp32/opt/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/5.2.0/]
+  ignore line: [c:/sysgcc/esp32/opt/xtensa-esp32-elf/bin/../lib/gcc/]
+  ignore line: [c:/sysgcc/esp32/opt/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/5.2.0/../../../../xtensa-esp32-elf/lib/]
+  ignore line: [c:/sysgcc/esp32/opt/xtensa-esp32-elf/bin/../xtensa-esp32-elf/sysroot/lib/]
+  ignore line: [c:/sysgcc/esp32/opt/xtensa-esp32-elf/bin/../xtensa-esp32-elf/sysroot/usr/lib/]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_3ace4.dir/CMakeCXXCompilerABI.cpp.obj' '-c']
+  ignore line: [[2/2] Linking CXX executable cmTC_3ace4]
+  ignore line: [Using built-in specs.]
+  ignore line: [COLLECT_GCC=C:\sysgcc\esp32\opt\xtensa-esp32-elf\bin\xtensa-esp32-elf-g++.exe]
+  ignore line: [COLLECT_LTO_WRAPPER=c:/sysgcc/esp32/opt/xtensa-esp32-elf/bin/../libexec/gcc/xtensa-esp32-elf/5.2.0/lto-wrapper.exe]
+  ignore line: [Target: xtensa-esp32-elf]
+  ignore line: [Configured with: /builds/idf/crosstool-NG/.build/src/gcc-5.2.0/configure --build=x86_64-build_pc-linux-gnu --host=i686-host_pc-mingw32 --target=xtensa-esp32-elf --prefix=/builds/idf/crosstool-NG/builds/xtensa-esp32-elf --with-local-prefix=/builds/idf/crosstool-NG/builds/xtensa-esp32-elf/xtensa-esp32-elf/sysroot --with-sysroot=/builds/idf/crosstool-NG/builds/xtensa-esp32-elf/xtensa-esp32-elf/sysroot --with-newlib --enable-threads=no --disable-shared --with-pkgversion='crosstool-NG crosstool-ng-1.22.0-80-g6c4433a5' --disable-__cxa_atexit --enable-cxx-flags='-fno-rtti -ffunction-sections' --with-gmp=/builds/idf/crosstool-NG/.build/xtensa-esp32-elf/buildtools/complibs-host --with-mpfr=/builds/idf/crosstool-NG/.build/xtensa-esp32-elf/buildtools/complibs-host --with-mpc=/builds/idf/crosstool-NG/.build/xtensa-esp32-elf/buildtools/complibs-host --with-isl=/builds/idf/crosstool-NG/.build/xtensa-esp32-elf/buildtools/complibs-host --with-cloog=/builds/idf/crosstool-NG/.build/xtensa-esp32-elf/buildtools/complibs-host --with-libelf=/builds/idf/crosstool-NG/.build/xtensa-esp32-elf/buildtools/complibs-host --enable-lto --enable-target-optspace --without-long-double-128 --disable-libgomp --disable-libmudflap --disable-libssp --disable-libquadmath --disable-libquadmath-support --disable-nls --enable-languages=c,c++ --disable-libstdcxx-verbose --enable-threads=posix --enable-gcov-custom-rtio]
+  ignore line: [Thread model: posix]
+  ignore line: [gcc version 5.2.0 (crosstool-NG crosstool-ng-1.22.0-80-g6c4433a5) ]
+  ignore line: [COMPILER_PATH=c:/sysgcc/esp32/opt/xtensa-esp32-elf/bin/../libexec/gcc/xtensa-esp32-elf/5.2.0/]
+  ignore line: [c:/sysgcc/esp32/opt/xtensa-esp32-elf/bin/../libexec/gcc/]
+  ignore line: [c:/sysgcc/esp32/opt/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/5.2.0/../../../../xtensa-esp32-elf/bin/]
+  ignore line: [LIBRARY_PATH=c:/sysgcc/esp32/opt/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/5.2.0/]
+  ignore line: [c:/sysgcc/esp32/opt/xtensa-esp32-elf/bin/../lib/gcc/]
+  ignore line: [c:/sysgcc/esp32/opt/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/5.2.0/../../../../xtensa-esp32-elf/lib/]
+  ignore line: [c:/sysgcc/esp32/opt/xtensa-esp32-elf/bin/../xtensa-esp32-elf/sysroot/lib/]
+  ignore line: [c:/sysgcc/esp32/opt/xtensa-esp32-elf/bin/../xtensa-esp32-elf/sysroot/usr/lib/]
+  ignore line: [COLLECT_GCC_OPTIONS='-nostdlib' '-v' '-o' 'cmTC_3ace4']
+  link line: [ c:/sysgcc/esp32/opt/xtensa-esp32-elf/bin/../libexec/gcc/xtensa-esp32-elf/5.2.0/collect2.exe -plugin c:/sysgcc/esp32/opt/xtensa-esp32-elf/bin/../libexec/gcc/xtensa-esp32-elf/5.2.0/liblto_plugin-0.dll -plugin-opt=c:/sysgcc/esp32/opt/xtensa-esp32-elf/bin/../libexec/gcc/xtensa-esp32-elf/5.2.0/lto-wrapper.exe -plugin-opt=-fresolution=C:\Users\ms\AppData\Local\Temp\ccu9jF6z.res --sysroot=c:\sysgcc\esp32\opt\xtensa-esp32-elf\bin\../xtensa-esp32-elf/sysroot -o cmTC_3ace4 -Lc:/sysgcc/esp32/opt/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/5.2.0 -Lc:/sysgcc/esp32/opt/xtensa-esp32-elf/bin/../lib/gcc -Lc:/sysgcc/esp32/opt/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/5.2.0/../../../../xtensa-esp32-elf/lib -Lc:/sysgcc/esp32/opt/xtensa-esp32-elf/bin/../xtensa-esp32-elf/sysroot/lib -Lc:/sysgcc/esp32/opt/xtensa-esp32-elf/bin/../xtensa-esp32-elf/sysroot/usr/lib CMakeFiles/cmTC_3ace4.dir/CMakeCXXCompilerABI.cpp.obj]
+    arg [c:/sysgcc/esp32/opt/xtensa-esp32-elf/bin/../libexec/gcc/xtensa-esp32-elf/5.2.0/collect2.exe] ==> ignore
+    arg [-plugin] ==> ignore
+    arg [c:/sysgcc/esp32/opt/xtensa-esp32-elf/bin/../libexec/gcc/xtensa-esp32-elf/5.2.0/liblto_plugin-0.dll] ==> ignore
+    arg [-plugin-opt=c:/sysgcc/esp32/opt/xtensa-esp32-elf/bin/../libexec/gcc/xtensa-esp32-elf/5.2.0/lto-wrapper.exe] ==> ignore
+    arg [-plugin-opt=-fresolution=C:\Users\ms\AppData\Local\Temp\ccu9jF6z.res] ==> ignore
+    arg [--sysroot=c:\sysgcc\esp32\opt\xtensa-esp32-elf\bin\../xtensa-esp32-elf/sysroot] ==> ignore
+    arg [-o] ==> ignore
+    arg [cmTC_3ace4] ==> ignore
+    arg [-Lc:/sysgcc/esp32/opt/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/5.2.0] ==> dir [c:/sysgcc/esp32/opt/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/5.2.0]
+    arg [-Lc:/sysgcc/esp32/opt/xtensa-esp32-elf/bin/../lib/gcc] ==> dir [c:/sysgcc/esp32/opt/xtensa-esp32-elf/bin/../lib/gcc]
+    arg [-Lc:/sysgcc/esp32/opt/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/5.2.0/../../../../xtensa-esp32-elf/lib] ==> dir [c:/sysgcc/esp32/opt/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/5.2.0/../../../../xtensa-esp32-elf/lib]
+    arg [-Lc:/sysgcc/esp32/opt/xtensa-esp32-elf/bin/../xtensa-esp32-elf/sysroot/lib] ==> dir [c:/sysgcc/esp32/opt/xtensa-esp32-elf/bin/../xtensa-esp32-elf/sysroot/lib]
+    arg [-Lc:/sysgcc/esp32/opt/xtensa-esp32-elf/bin/../xtensa-esp32-elf/sysroot/usr/lib] ==> dir [c:/sysgcc/esp32/opt/xtensa-esp32-elf/bin/../xtensa-esp32-elf/sysroot/usr/lib]
+    arg [CMakeFiles/cmTC_3ace4.dir/CMakeCXXCompilerABI.cpp.obj] ==> ignore
+  collapse library dir [c:/sysgcc/esp32/opt/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/5.2.0] ==> [C:/sysgcc/esp32/opt/xtensa-esp32-elf/lib/gcc/xtensa-esp32-elf/5.2.0]
+  collapse library dir [c:/sysgcc/esp32/opt/xtensa-esp32-elf/bin/../lib/gcc] ==> [C:/sysgcc/esp32/opt/xtensa-esp32-elf/lib/gcc]
+  collapse library dir [c:/sysgcc/esp32/opt/xtensa-esp32-elf/bin/../lib/gcc/xtensa-esp32-elf/5.2.0/../../../../xtensa-esp32-elf/lib] ==> [C:/sysgcc/esp32/opt/xtensa-esp32-elf/xtensa-esp32-elf/lib]
+  collapse library dir [c:/sysgcc/esp32/opt/xtensa-esp32-elf/bin/../xtensa-esp32-elf/sysroot/lib] ==> [C:/sysgcc/esp32/opt/xtensa-esp32-elf/xtensa-esp32-elf/sysroot/lib]
+  collapse library dir [c:/sysgcc/esp32/opt/xtensa-esp32-elf/bin/../xtensa-esp32-elf/sysroot/usr/lib] ==> [C:/sysgcc/esp32/opt/xtensa-esp32-elf/xtensa-esp32-elf/sysroot/usr/lib]
+  implicit libs: []
+  implicit dirs: [C:/sysgcc/esp32/opt/xtensa-esp32-elf/lib/gcc/xtensa-esp32-elf/5.2.0;C:/sysgcc/esp32/opt/xtensa-esp32-elf/lib/gcc;C:/sysgcc/esp32/opt/xtensa-esp32-elf/xtensa-esp32-elf/lib;C:/sysgcc/esp32/opt/xtensa-esp32-elf/xtensa-esp32-elf/sysroot/lib;C:/sysgcc/esp32/opt/xtensa-esp32-elf/xtensa-esp32-elf/sysroot/usr/lib]
+  implicit fwks: []
+
+

@@ -1,0 +1,13 @@
+# Target labels
+ mconf-idf
+# Source files and their labels
+C:/Users/ms/source/repos/SRO/MK2/VisualGDB/Debug/bootloader/CMakeFiles/mconf-idf
+C:/Users/ms/source/repos/SRO/MK2/VisualGDB/Debug/bootloader/CMakeFiles/mconf-idf.rule
+C:/Users/ms/source/repos/SRO/MK2/VisualGDB/Debug/bootloader/CMakeFiles/mconf-idf-complete.rule
+C:/Users/ms/source/repos/SRO/MK2/VisualGDB/Debug/bootloader/mconf-idf-prefix/src/mconf-idf-stamp/mconf-idf-install.rule
+C:/Users/ms/source/repos/SRO/MK2/VisualGDB/Debug/bootloader/mconf-idf-prefix/src/mconf-idf-stamp/mconf-idf-mkdir.rule
+C:/Users/ms/source/repos/SRO/MK2/VisualGDB/Debug/bootloader/mconf-idf-prefix/src/mconf-idf-stamp/mconf-idf-download.rule
+C:/Users/ms/source/repos/SRO/MK2/VisualGDB/Debug/bootloader/mconf-idf-prefix/src/mconf-idf-stamp/mconf-idf-update.rule
+C:/Users/ms/source/repos/SRO/MK2/VisualGDB/Debug/bootloader/mconf-idf-prefix/src/mconf-idf-stamp/mconf-idf-patch.rule
+C:/Users/ms/source/repos/SRO/MK2/VisualGDB/Debug/bootloader/mconf-idf-prefix/src/mconf-idf-stamp/mconf-idf-configure.rule
+C:/Users/ms/source/repos/SRO/MK2/VisualGDB/Debug/bootloader/mconf-idf-prefix/src/mconf-idf-stamp/mconf-idf-build.rule

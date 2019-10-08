@@ -1,0 +1,1 @@
+cmd='C:/Users/ms/AppData/Local/VisualGDB/CMake/bin/cmake.exe;-DSDKCONFIG=C:/Users/ms/source/repos/SRO/MK2/sdkconfig;-DIDF_PATH=c:/SysGCC/esp32/esp-idf/v3.2;-GNinja;<SOURCE_DIR><SOURCE_SUBDIR>'

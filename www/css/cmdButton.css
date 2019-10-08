@@ -1,0 +1,16 @@
+/*!
+ * cmdButton Custom Styling
+ */
+
+.cmdButton.startup {
+  animation-duration: 0.2s;
+  animation-name: _cmdBlink;
+  animation-iteration-count: 16;
+  animation-direction: alternate;
+}
+
+@keyframes _cmdBlink {
+  from { background-color: rgb(44, 180, 87); }
+  to { background-color: rgb(255, 206, 38); }
+}
+
