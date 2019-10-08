@@ -30,6 +30,6 @@ Since the machine itself don't have any display or buttons I decidedt to utilize
 
 #### Servo Motor - EYESKY 15KG
 ![Servo Motor](/pictures/parts/servo.jpg)
-This motor is used to open the door after the solering sequence to shorten the cool down time. It also opens the door during the cycle in case the temperature rises over the maximum tolerance of the actual set value to prevent damage on the PCB or parts. Any servo motor with sufficient torque will work for that purpose.
+This motor is used to open the door after the soldering sequence to shorten the cool down time. It also opens the door during the cycle in case the temperature rises over the maximum tolerance of the actual set value to prevent damage on the PCB or parts. Any servo motor with sufficient torque will work for that purpose.
 
 
