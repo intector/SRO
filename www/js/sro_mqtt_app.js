@@ -18,7 +18,7 @@ var _timeout = null;
 
 function TO_Start(){
     _timeout = setTimeout(function() {
-      cmdButtonsDisable(true);
+//      cmdButtonsDisable(true);
       tod.classList.remove('connected');
       tod.classList.add('notconnected');
       $('.TempValue').removeClass('TempSensor_ERR').removeClass('TempSensor_OK').addClass('TempSensor_OFF');
@@ -153,26 +153,26 @@ var websocketclient = {
 
       if (message.destinationName == MQTT_SubscriptionTag.subSolParLoad ){
         SolderingParameter = JSON.parse(message.payloadString);
-        console.log("answer: " + message.payloadString);
         document.getElementById("idSRO_ParSetSel").selectedIndex = SolderingParameter.idSRO_ParSetSel - 1;
-        document.getElementById("InputTime01").value = SolderingParameter.InputTime01;
-        document.getElementById("InputTime02").value = SolderingParameter.InputTime02;
-        document.getElementById("InputTime03").value = SolderingParameter.InputTime03;
-        document.getElementById("InputTime04").value = SolderingParameter.InputTime04;
-        document.getElementById("InputTime05").value = SolderingParameter.InputTime05;
-        document.getElementById("InputTemp01").value = SolderingParameter.InputTemp01;
-        document.getElementById("InputTemp02").value = SolderingParameter.InputTemp02;
-        document.getElementById("InputTemp03").value = SolderingParameter.InputTemp03;
-        document.getElementById("InputTemp04").value = SolderingParameter.InputTemp04;
-        document.getElementById("InputTemp05").value = SolderingParameter.InputTemp05;
-        SRO_SetValChart_Update();
+        SRO_Para_MemToInput();
+        RSP_Chart = new Chart( A01_ctx, {
+          type : "line",
+          data : RSP_Data,
+          options : RSP_Options
+        });
+        RSP_SetValChart_Update();
       }
 
       if (message.destinationName == MQTT_SubscriptionTag.subPID_ParLoad ){
         ParPID = JSON.parse(message.payloadString);
-        document.getElementById("maint_PID_KP").value = ParPID.PID_KP;
-        document.getElementById("maint_PID_KI").value = ParPID.PID_KI;
-        document.getElementById("maint_PID_KD").value = ParPID.PID_KD;
+        document.getElementById("SI_PID01").value = ParPID.PID_KP;
+        document.getElementById("SI_PID02").value = ParPID.PID_KI;
+        document.getElementById("SI_PID03").value = ParPID.PID_KD;
+        document.getElementById("SI_HS01").value = ParPID.HU_Ramp;
+        document.getElementById("SI_HS02").value = ParPID.CD_Ramp;
+        document.getElementById("SI_HS03").value = ParPID.TestTemp;
+        document.getElementById("SI_HS04").value = ParPID.HoldTime;
+        document.getElementById("SI_HS05").value = ParPID.OvenMaxTemp;
       }
 
       if (message.destinationName == MQTT_SubscriptionTag.temperature ){
@@ -181,11 +181,13 @@ var websocketclient = {
         if (ActualTemperature.bSensor_OK){
           $('.TempValue').removeClass('TempSensor_OFF').removeClass('TempSensor_ERR').addClass('TempSensor_OK');
           _tmpTempDisplay.innerHTML = ActualTemperature.sTemp_C + datTempUnit;
+          if (Actual_OPM == "OPM - Manual"){
+            DataStream();
+          }
         } else{
           $('.TempValue').removeClass('TempSensor_OFF').removeClass('TempSensor_OK').addClass('TempSensor_ERR');
           _tmpTempDisplay.innerHTML = "error";
         }
-        DataStream();
       }
 
       if (message.destinationName == MQTT_SubscriptionTag.run_in ){
@@ -232,8 +234,7 @@ var websocketclient = {
 
       if (message.destinationName == MQTT_SubscriptionTag.door_in ){
         CTRL_CMD_VALUE = JSON.parse(message.payloadString);
-        _ActAniBtn = document.getElementById("btnDoor");
-        _ActAniBtn.value = CTRL_CMD_VALUE.DOOR;
+        document.getElementById("OutputDoorPos").innerHTML = "<h4>"+CTRL_CMD_VALUE.ACT_DOOR_POS + " %</h4>";
       }
 
     },
@@ -286,159 +287,12 @@ var websocketclient = {
             this.unsubscribe(id);
         }
     },
-/*
-    'getRandomColor': function () {
-        var r = (Math.round(Math.random() * 255)).toString(16);
-        var g = (Math.round(Math.random() * 255)).toString(16);
-        var b = (Math.round(Math.random() * 255)).toString(16);
-        return r + g + b;
-    },
-
-    'getSubscriptionForTopic': function (topic) {
-        var i;
-        for (i = 0; i < this.subscriptions.length; i++) {
-            if (this.compareTopics(topic, this.subscriptions[i].topic)) {
-                return this.subscriptions[i];
-            }
-        }
-        return false;
-    },
-
-    'getColorForPublishTopic': function (topic) {
-        var id = this.getSubscriptionForTopic(topic);
-        return this.getColorForSubscription(id);
-    },
-
-    'getColorForSubscription': function (id) {
-        try {
-            if (!id) {
-                return '99999';
-            }
-
-            var sub = _.find(this.subscriptions, { 'id': id });
-            if (!sub) {
-                return '999999';
-            } else {
-                return sub.color;
-            }
-        } catch (e) {
-            return '999999';
-        }
-    },
-
-    'compareTopics': function (topic, subTopic) {
-        var pattern = subTopic.replace("+", "(.*?)").replace("#", "(.*)");
-        var regex = new RegExp("^" + pattern + "$");
-        return regex.test(topic);
-    },
-*/
     'render': {
 
         'showError': function (message) {
             alert(message);
         },
       
-/*
-        'messages': function () {
-
-            websocketclient.render.clearMessages();
-            _.forEach(websocketclient.messages, function (message) {
-                message.id = websocketclient.render.message(message);
-            });
-
-        },
-        'message': function (message) {
-
-            var largest = websocketclient.lastMessageId++;
-
-            var html = '<li class="messLine id="' + largest + '">' +
-                '   <div class="row large-12 mess' + largest + '" style="border-left: solid 10px #' + message.color + '; ">' +
-                '       <div class="large-12 columns messageText">' +
-                '           <div class="large-3 columns date">' + message.timestamp.format("YYYY-MM-DD HH:mm:ss") + '</div>' +
-                '           <div class="large-5 columns topicM truncate" id="topicM' + largest + '" title="' + Encoder.htmlEncode(message.topic, 0) + '">Topic: ' + Encoder.htmlEncode(message.topic) + '</div>' +
-                '           <div class="large-2 columns qos">Qos: ' + message.qos + '</div>' +
-                '           <div class="large-2 columns retain">';
-            if (message.retained) {
-                html += 'Retained';
-            }
-            html += '           </div>' +
-                '           <div class="large-12 columns message break-words">' + Encoder.htmlEncode(message.payload) + '</div>' +
-                '       </div>' +
-                '   </div>' +
-                '</li>';
-            $("#messEdit").prepend(html);
-            return largest;
-        },
-*/
-/*
-        'subscriptions': function () {
-            websocketclient.render.clearSubscriptions();
-            _.forEach(websocketclient.subscriptions, function (subs) {
-                subs.id = websocketclient.render.subscription(subs);
-            });
-        },
-
-        'subscription': function (subscription) {
-            var largest = websocketclient.lastSubId++;
-            $("#innerEdit").append(
-                '<li class="subLine" id="sub' + largest + '">' +
-                    '   <div class="row large-12 subs' + largest + '" style="border-left: solid 10px #' + subscription.color + '; background-color: #ffffff">' +
-                    '       <div class="large-12 columns subText">' +
-                    '           <div class="large-1 columns right closer">' +
-                    '              <a href="#" onclick="websocketclient.deleteSubscription(' + largest + '); return false;">x</a>' +
-                    '           </div>' +
-                    '           <div class="qos">Qos: ' + subscription.qos + '</div>' +
-                    '           <div class="topic truncate" id="topic' + largest + '" title="' + Encoder.htmlEncode(subscription.topic, 0) + '">' + Encoder.htmlEncode(subscription.topic) + '</div>' +
-                    '       </div>' +
-                    '   </div>' +
-                    '</li>');
-            return largest;
-        },
-*/
-/*
-        'toggleAll': function () {
-            websocketclient.render.toggle('conni');
-            websocketclient.render.toggle('publish');
-            websocketclient.render.toggle('messages');
-            websocketclient.render.toggle('sub');
-        },
-
-        'toggle': function (name) {
-            $('.' + name + 'Arrow').toggleClass("closed");
-            $('.' + name + 'Top').toggleClass("closed");
-            var elem = $('#' + name + 'Main');
-            elem.slideToggle();
-        },
-
-        'hide': function (name) {
-            $('.' + name + 'Arrow').addClass("closed");
-            $('.' + name + 'Top').addClass("closed");
-            var elem = $('#' + name + 'Main');
-            elem.slideUp();
-        },
-
-        'show': function (name) {
-            $('.' + name + 'Arrow').removeClass("closed");
-            $('.' + name + 'Top').removeClass("closed");
-            var elem = $('#' + name + 'Main');
-            elem.slideDown();
-        },
-
-        'removeSubscriptionsMessages': function (id) {
-            websocketclient.messages = _.filter(websocketclient.messages, function (item) {
-                return item.subscriptionId != id;
-            });
-            websocketclient.render.messages();
-        },
-
-        'clearMessages': function () {
-            $("#messEdit").empty();
-        },
-
-        'clearSubscriptions': function () {
-            $("#innerEdit").empty();
-        }
-*/
     }
 };
 
