@@ -1,0 +1,26 @@
+{
+	"id":	1,
+	"name":	"63/37 Leaded",
+	"description":	"Traditional leaded solder profile",
+	"solder_melting_point":	0,
+	"absolute_peak_temp":	0,
+	"estimated_duration_sec":	0,
+	"active":	false,
+	"preheat":	{
+		"max_temp":	120,
+		"time_sec":	60
+	},
+	"soak":	{
+		"max_temp":	150,
+		"time_sec":	90
+	},
+	"reflow":	{
+		"min_temp":	200,
+		"max_temp":	215,
+		"time_sec":	20
+	},
+	"cooling":	{
+		"max_rate":	-3,
+		"target_temp":	50
+	}
+}

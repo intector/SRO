@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SRO - Soldering Reflow Oven</title>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico">
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/img/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicon-16x16.png">
+
+  <!-- Fonts -->
+  <link rel="stylesheet" href="assets/css/Ubuntu.css">
+  <link rel="stylesheet" href="assets/css/Ubuntu_Condensed.css">
+  <link rel="stylesheet" href="assets/css/Ubuntu_Mono.css">
+
+  <!-- Bootstrap CSS -->
+  <link href="css/bootstrap_slate.min.css" rel="stylesheet" id="theme-css">
+
+  <!-- Bootstrap Icons (offline) -->
+  <link rel="stylesheet" href="css/bootstrap-icons.css">
+
+  <!-- Custom SRO Styles -->
+  <link href="assets/css/sro_colors.css" rel="stylesheet">
+  <link href="assets/css/sro_styles.css" rel="stylesheet">
+</head>
+<body>
+  <!-- Navigation Bar -->
+  <nav class="navbar navbar-expand-lg bg-primary bg-gradient" data-bs-theme="dark">
+    <div class="container-fluid">
+      <div class="navbar-brand d-flex align-content-center" href="#">
+        <img src="assets/img/favicon-32x32.png" alt="SRO Logo" class="mx-2">
+        <div>SRO - Soldering Reflow Controller</div>
+      </div>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+              aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <!-- ***** Nav-Bar menu ***** -->
+        <ul class="navbar-nav me-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="#" data-section="dashboard">
+              <i class="bi bi-speedometer2"></i> Dashboard
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#" data-section="manual-control">
+              <i class="bi bi-hand-index-thumb"></i> Manual Control
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#" data-section="tuning">
+              <i class="bi bi-sliders"></i> Tuning
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#" data-section="settings">
+              <i class="bi bi-gear"></i> Settings
+            </a>
+          </li>
+        </ul>
+        <!-- ***** Nav-Bar right side controls ***** -->
+        <div class="d-flex align-items-center">
+          <!-- Temperature Display Section -->
+          <div class="d-flex align-items-center me-5">
+            <div class="hstack gap-1">
+              <div class="bi bi-thermometer-half fs-2"></div>
+              <div class="navbar-temp-display temp-actual fs-1" id="navbar-actual-temp">--°C</div>
+              <div class="fs-1" style="color: var(--sro-gray-600)">/</div>
+              <div class="navbar-temp-display temp-actual fs-1" id="navbar-set-temp">--°C</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ***** Top Status bar ***** -->
+  <div id="sro-status-bar" class="alert bg-primary border border-dark rounded-top-0 py-1 d-flex" role="alert">
+
+    <div class="hstack gap-2">
+      <div id="first" class="d-flex align-items-center flex-grow-1">
+        <i id="status-icon" class="bi bi-info-circle text-warning me-2"></i>
+        <span id="status-message" class="text-warning">Ready - Waiting for connection...</span>
+      </div>
+
+      <!-- Hardware Status Section -->
+      <div id="second" class="hstack gap-4 hardware-status-container me-4">
+        <div class="hardware-status-item">
+          <div class="hstack gap-1">
+            <i class="bi bi-fire hardware-status-icon"></i>
+            <span id="hardware-heater-status">OFF</span>
+          </div>
+        </div>
+        <div class="hardware-status-item">
+          <div class="hstack gap-1">
+            <i class="bi bi-fan hardware-status-icon"></i>
+            <span id="hardware-fan-status">OFF</span>
+          </div>
+        </div>
+        <div class="hardware-status-item">
+          <div class="hstack gap-1">
+            <i class="bi bi-door-open hardware-status-icon"></i>
+            <span id="hardware-door-status">0%</span>
+          </div>
+        </div>
+        <div class="hardware-status-item">
+          <div class="hstack gap-1">
+            <i class="bi bi-hdd-network hardware-status-icon"></i>
+            <span id="hardware-connection-status">connecting...</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- ***** Main Content begin ***** -->
+  <div class="container-fluid mt-3">
+
+    <!-- Dashboard Section -->
+    <div id="dashboard-section" class="content-section">
+      <div class="row">
+        <div class="col-12">
+          <div class="card sro-border-automatic">
+            <div class="card-header sro-bg-automatic bg-gradient text-white">
+              <h5 class="mb-0">
+                <i class="bi bi-speedometer2"></i> Dashboard
+              </h5>
+            </div>
+            <div class="card-body">
+              <div class="row m-0">
+                <div class="col-8">
+                  <!-- Reflow Chart -->
+                  <div class="row">
+                    <div class="container-fluid bg-dark sro-border-automatic border rounded my-1 reflow-chart-container">
+                      <canvas id="ReflowChart" class="my-2" aria-label="automatic" role="img"></canvas>
+                    </div>
+                  </div>
+
+                </div>
+                <div class="col-4 pe-0">
+                  <!-- Soldering Sequence Start/Stop -->
+                  <div class="container-fluid my-1 table-success border sro-border-automatic rounded">
+                    <div class="row justify-content-center align-items-center h-100 d-flex">
+                      <div class="col-7">
+
+                        <div class="m-0 text-center fs-5">Soldering Sequence</div>
+                        <div class="d-flex justify-content-center gap-3 text-white-50">
+                          <span id="used-kp">Kp: 1.00</span>
+                          <span id="used-ki">Ki: 0.02</span>
+                          <span id="used-kd">Kd: 0.2</span>
+                        </div>
+
+                      </div>
+                      <div class="d-grid col-5 mx-auto py-1">
+                        <button type="button" id="btnProfileRun" data-txtoff="RUN" data-txton="STOP"
+                                class="btn btn-lg btn-success">RUN</button>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Soldering Parameter Data Table -->
+                  <div class="container-fluid p-2 border sro-border-automatic rounded">
+                    <div class="row m-0 m-auto">
+                      <table class="table table-sm table-borderless mb-0">
+                        <tbody>
+                        <tr>
+                          <th scope="row" class="text-center align-middle sro-border-cell">Name</th>
+                          <td colspan="3" class="align-middle sro-border-cell"><input id="InputProfileName" class="form-control text-right form-control-sm" type="text"></td>
+                        </tr>
+                        <tr>
+                          <th scope="row" class="text-center align-middle sro-border-cell">Brief Description</th>
+                          <td colspan="3" class="align-middle sro-border-cell"><input id="InputProfileDescription" class="form-control text-right form-control-sm" type="text"></td>
+                        </tr>
+                        <tr>
+                          <th class="text-center"></th>
+                          <th class="text-center sro-border-cell">min temp in °C</th>
+                          <th class="text-center sro-border-cell">max temp in °C</th>
+                          <th class="text-center sro-border-cell">time in sec</th>
+                        </tr>
+                        <tr>
+                          <th scope="row" class="text-center align-middle sro-border-cell">Preheat</th>
+                          <th scope="row"></th>
+                          <td class="align-middle sro-border-cell"><input id="InputPreheatTempMax" class="form-control text-right form-control-sm" type="number" placeholder="0.0"></td>
+                          <td class="align-middle sro-border-cell"><input id="InputPreheatTime" class="form-control text-right form-control-sm" type="number" placeholder="0.0"></td>
+                        </tr>
+                        <tr>
+                          <th scope="row" class="text-center align-middle sro-border-cell">Soak</th>
+                          <th scope="row"></th>
+                          <td class="align-middle sro-border-cell"><input id="InputSoakTempMax" class="form-control text-right form-control-sm" type="number" placeholder="0.0"></td>
+                          <td class="align-middle sro-border-cell"><input id="InputSoakTime" class="form-control text-right form-control-sm" type="number" placeholder="0.0"></td>
+                        </tr>
+                        <tr>
+                          <th scope="row" class="text-center align-middle sro-border-cell">Reflow</th>
+                          <td class="align-middle sro-border-cell"><input id="InputReflowTempMin" class="form-control text-right form-control-sm" type="number" placeholder="0.0"></td>
+                          <td class="align-middle sro-border-cell"><input id="InputReflowTempMax" class="form-control text-right form-control-sm" type="number" placeholder="0.0"></td>
+                          <td class="align-middle sro-border-cell"><input id="InputReflowTime" class="form-control text-right form-control-sm" type="number" placeholder="0.0"></td>
+                        </tr>
+                        <tr>
+                          <th scope="row" class="text-center align-middle sro-border-cell">Cooling</th>
+                          <td colspan="2" class="align-middle sro-border-cell"><input id="InputCoolingTempRamp" class="form-control text-right form-control-sm" type="number" placeholder="0.0"></td>
+                          <th scope="row" class="text-center align-middle sro-border-cell">ramp in °C/sec</th>
+                        </tr>
+                        <tr>
+                          <th scope="row" class="text-center align-middle sro-border-cell">Solder Melting Point</th>
+                          <td colspan="2" class="align-middle sro-border-cell"><input id="InputSolderMeltingPoint" class="form-control text-right form-control-sm" type="number" placeholder="0.0"></td>
+                          <th scope="row" class="text-center align-middle sro-border-cell">temp in °C</th>
+                        </tr>
+                        <tr>
+                          <th scope="row" class="text-center align-middle sro-border-cell">Peak Temperature</th>
+                          <td colspan="2" class="align-middle sro-border-cell"><input id="InputPeakTemperature" class="form-control text-right form-control-sm" type="number" placeholder="0.0"></td>
+                          <th scope="row" class="text-center align-middle sro-border-cell">temp in °C</th>
+                        </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+
+                  <!-- Soldering Parameter Selection / Load / Save -->
+                  <div class="container-fluid mt-1 p-1 border sro-border-automatic rounded">
+                    <table class="table w-100  table-borderless text-center m-0">
+                      <tbody>
+                      <tr>
+                        <td colspan="2" class="align-middle"><select class="form-select form-select-lg" id="idSRO_ParSetSel">
+                          <option value="1" selected="selected">soldering parameter set - 01</option>
+                          <option value="2">soldering parameter set - 02</option>
+                          <option value="3">soldering parameter set - 03</option>
+                          <option value="4">soldering parameter set - 04</option>
+                          <option value="5">soldering parameter set - 05</option>
+                          <option value="6">soldering parameter set - 06</option>
+                          <option value="7">soldering parameter set - 07</option>
+                          <option value="8">soldering parameter set - 08</option>
+                          <option value="9">soldering parameter set - 09</option>
+                          <option value="10">soldering parameter set - 10</option>
+                        </select>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td style="width: 50%;">
+                          <button type="button" id="btnProfileLoadSet"
+                                  class="btn btn-lg btn-info w-100">load set</button>
+                        </td>
+                        <td style="width: 50%;">
+                          <button type="button" id="btnProfileSaveSet"
+                                  class="btn btn-lg btn-info w-100">save set</button>
+                        </td>
+                      </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Manual Control Section -->
+    <div id="manual-control-section" class="content-section">
+      <div class="row">
+        <div class="col-12">
+          <div class="card sro-border-manual">
+            <div class="card-header sro-bg-manual bg-gradient text-black">
+              <h5 class="mb-0">
+                <i class="bi bi-hand-index-thumb"></i> Manual Control
+              </h5>
+            </div>
+            <div class="card-body">
+
+              <div class="row m-0">
+                <div class="col-8">
+                  <!-- Manual Chart -->
+                  <div class="row">
+                    <div class="container-fluid bg-dark border-secondary border sro-border-manual rounded my-1 reflow-chart-container">
+                      <canvas id="ManualChart" class="my-2" aria-label="automatic" role="img"></canvas>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-4 pe-0">
+                  <!-- Manual Control right -->
+                  <div class="container-fluid border sro-border-manual rounded mt-1">
+
+                    <div class="row m-1">
+                      <table class="table mt-2">
+                        <tbody>
+                        <tr>
+                          <th colspan="6" scope="row" class="text-center align-middle"><h1 class="mb-0">Manual Control</h1></th>
+                        </tr>
+                        <tr>
+                          <th colspan="3" scope="row" class="text-center align-middle"><h4 class="mb-0" id="heater_btn_label">Heating to 0.0°C</h4></th>
+                          <td colspan="3">
+                            <button class="btn btn-lg btn-secondary w-100" type="button" id="btnHeatingElements">ON</button>
+                          </td>
+                        </tr>
+                        <tr>
+                          <th colspan="3" scope="row" class="text-center align-middle"><h4 class="mb-0">Convection Fan</h4></th>
+                          <td colspan="3">
+                            <button class="btn btn-lg btn-secondary w-100" type="button" id="btnConvectionFan">ON</button>
+                          </td>
+                        </tr>
+                        <tr>
+                          <th colspan="6" scope="row" class="text-center align-middle"><h4 class="mb-0 mt-4">Door</h4></th>
+                        </tr>
+                        <tr>
+                          <td colspan="6" class="align-middle">
+                            <input type="range" class="form-range" min="0" max="100" step="10" id="rangeDoor">
+                            <div class="text-center mt-1">
+                              <span id="doorValueDisplay" class="text-muted">0%</span>
+                            </div>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td class="align-middle" style="width: 20%;">
+                            <button class="btn btn-lg btn-secondary w-100" type="button" id="btnDoor0">0 %</button>
+                          </td>
+                          <td class="align-middle" style="width: 20%;">
+                            <button class="btn btn-lg btn-secondary w-100" type="button" id="btnDoor25">25 %</button>
+                          </td>
+                          <td class="align-middle" style="width: 20%;">
+                            <button class="btn btn-lg btn-secondary w-100" type="button" id="btnDoor50">50 %</button>
+                          </td>
+                          <td class="align-middle" style="width: 20%;">
+                            <button class="btn btn-lg btn-secondary w-100" type="button" id="btnDoor75">75 %</button>
+                          </td>
+                          <td class="align-middle" style="width: 20%;">
+                            <button class="btn btn-lg btn-secondary w-100" type="button" id="btnDoor100">100 %</button>
+                          </td>
+                        </tr>
+                        </tbody>
+                      </table>
+                    </div>
+
+
+                  </div>
+
+                </div>
+              </div>
+
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Tuning Controls Section -->
+    <div id="tuning-section" class="content-section">
+      <div class="row">
+        <div class="col-12">
+          <div class="card sro-border-tuning">
+            <div class="card-header sro-bg-tuning bg-gradient text-white">
+              <h5 class="mb-0">
+                <i class="bi bi-sliders"></i> Tuning
+              </h5>
+            </div>
+            <div class="card-body">
+
+
+
+              <div class="row m-0">
+                <div class="col-8">
+                  <!-- Tuning Chart -->
+                  <div class="row">
+                    <div class="container-fluid bg-dark sro-border-tuning border rounded my-1 reflow-chart-container">
+                      <canvas id="TuningChart" class="my-2" aria-label="automatic" role="img"></canvas>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-4 pe-0">
+                  <!-- tuning control -->
+                  <div class="container-fluid my-1 table-success border sro-border-tuning rounded">
+                    <div class="mt-2">
+
+                      <div class="my-2">
+
+                        <table class="table table-borderless">
+                          <tbody>
+                          <tr>
+                            <th colspan="3" scope="row" class="text-center align-middle">
+                              <h3 class="mb-2">Automatic Tuning</h3>
+                            </th>
+                          </tr>
+                          <tr>
+                            <td style="width: 50%;">
+                              <button type="button" id="btnAutoTuneStart"
+                                      class="btn btn-lg btn-info w-100">start tuning</button>
+                            </td>
+                            <td style="width: 50%;">
+                              <button type="button" id="btnAutoTuneStop"
+                                      class="btn btn-lg btn-info w-100">stop tuning</button>
+                            </td>
+                          </tr>
+                          </tbody>
+                        </table>
+                        <table class="table table-borderless">
+                          <tbody>
+                          <tr>
+                            <th colspan="3" scope="row" class="text-center align-middle"><h3 class="mb-0">PID Parameter</h3></th>
+                          </tr>
+                          <tr>
+                            <th scope="row" class="text-center align-middle sro-border-cell bg-secondary"><h5 class="mb-0">PID-Kp</h5></th>
+                            <th scope="row" class="text-center align-middle sro-border-cell bg-secondary"><h5 class="mb-0">PID-Ki</h5></th>
+                            <th scope="row" class="text-center align-middle sro-border-cell bg-secondary"><h5 class="mb-0">PID-Kd</h5></th>
+                          </tr>
+                          <tr>
+                            <td class="align-middle sro-border-cell"><input id="AutoTune-Kp" class="form-control form-control-sm" type="number" placeholder="0.0"></td>
+                            <td class="align-middle sro-border-cell"><input id="AutoTune-Ki" class="form-control form-control-sm" type="number" placeholder="0.0"></td>
+                            <td class="align-middle sro-border-cell"><input id="AutoTune-Kd" class="form-control form-control-sm" type="number" placeholder="0.0"></td>
+                          </tr>
+                          </tbody>
+                        </table>
+                        <table class="table table-borderless mb-0">
+                          <tbody>
+                          <tr>
+                            <td style="width: 100%;">
+                              <button type="button" id="btnAutoTuneSave"
+                                      class="btn btn-lg btn-info w-100">save data</button>
+                            </td>
+                          </tr>
+                          </tbody>
+                        </table>
+
+                      </div>
+
+
+
+                    </div>
+                  </div>
+
+
+                  <!-- collect oven data control -->
+                  <div class="container-fluid my-1 table-success border sro-border-tuning rounded">
+                    <div class="mt-2">
+
+                      <div class="my-2">
+
+                        <table class="table table-borderless">
+                          <tbody>
+                          <tr>
+                            <th colspan="3" scope="row" class="text-center align-middle">
+                              <h3 class="mb-2">Collect Oven Data</h3>
+                            </th>
+                          </tr>
+                          <tr>
+                            <td style="width: 50%;">
+                              <button type="button" id="btnCollectOvenDataStart"
+                                      class="btn btn-lg btn-info w-100">start collecting oven data</button>
+                            </td>
+                          </tr>
+                          </tbody>
+                        </table>
+
+                      </div>
+
+
+
+                    </div>
+                  </div>
+
+
+
+                </div>
+              </div>
+
+
+
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Settings Section -->
+    <div id="settings-section" class="content-section">
+      <div class="row">
+        <div class="col-12">
+          <div class="card sro-border-settings">
+            <div class="card-header sro-bg-settings bg-gradient text-white">
+              <h5 class="mb-0">
+                <i class="bi bi-gear"></i> Settings
+              </h5>
+            </div>
+            <div class="card-body">
+              <p class="text-muted">Settings interface will be implemented here.</p>
+              <!-- Settings content to be added -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Not Connected Section -->
+    <div id="not-connected-section" class="content-section active">
+      <div class="row">
+        <div class="col-12">
+          <div class="card sro-border-not-connected">
+            <div class="card-header sro-bg-not-connected bg-gradient text-black">
+              <h5 class="mb-0">
+                <i class="bi bi-hdd-network"></i> Data Connection
+              </h5>
+            </div>
+            <div class="card-body connecting-bg">
+              <div class="vstack gap-2">
+                <div class="container-fluid h-100 d-flex justify-content-center align-items-center">
+                  <h1 class="h1 connection-status-icon connecting">trying to connect to WebSocket Server...</h1>
+                </div>
+
+                <div class="d-grid col-5 mx-auto py-1">
+                  <button type="button" onclick="cmdWorkOffline(this)" id="btnWorkOffline" data-txtoff="run offline" data-txton="connect"
+                          class="btn btn-lg btn-dark">start without connecting</button>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+  </div>
+  <!-- ***** Main Content end ***** -->
+  <hr>
+  <!-- ***** Footer Content ***** -->
+  <footer class="text-center text-white-50">
+    <div class="col-12 sro-copyright-text">
+      <p>copyright © 2025 intector, all rights reserved</p>
+    </div>
+  </footer>
+
+  <!-- JavaScript Libraries -->
+  <script src="js/jquery-3.7.1.min.js"></script>
+  <script src="js/bootstrap.bundle.min.js"></script>
+
+  <!-- ***** charts.js-4.5.0 ***** -->
+  <script src="js/charts_4.5.0/chart.umd.min.js"></script>
+  <script src="js/charts_4.5.0/chartjs-plugin-annotation.min.js"></script>
+
+  <!-- SRO Application Scripts -->
+  <script src="assets/js/sro_websocket.js"></script>
+  <script src="assets/js/sro_main.js"></script>
+  <script src="assets/js/sro_chart.js"></script>
+  <script src="assets/js/sro_profiles.js"></script>
+  <script src="assets/js/sro_manual.js"></script>
+  <script src="assets/js/sro_tuning.js"></script>
+
+</body>
+</html>

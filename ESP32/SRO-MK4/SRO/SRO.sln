@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.13.35931.197 d17.13
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{803FD0C6-D64E-4E16-9DC3-1DAEC859A3D2}") = "SRO", "SRO.vgdbproj", "{C53E5934-4093-4BD3-B8BE-1F191B020623}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|VisualGDB = Debug|VisualGDB
+		Release|VisualGDB = Release|VisualGDB
+		Tests (Debug)|VisualGDB = Tests (Debug)|VisualGDB
+		Tests (Release)|VisualGDB = Tests (Release)|VisualGDB
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C53E5934-4093-4BD3-B8BE-1F191B020623}.Debug|VisualGDB.ActiveCfg = Debug|VisualGDB
+		{C53E5934-4093-4BD3-B8BE-1F191B020623}.Debug|VisualGDB.Build.0 = Debug|VisualGDB
+		{C53E5934-4093-4BD3-B8BE-1F191B020623}.Release|VisualGDB.ActiveCfg = Release|VisualGDB
+		{C53E5934-4093-4BD3-B8BE-1F191B020623}.Release|VisualGDB.Build.0 = Release|VisualGDB
+		{C53E5934-4093-4BD3-B8BE-1F191B020623}.Tests (Debug)|VisualGDB.ActiveCfg = Tests (Debug)|VisualGDB
+		{C53E5934-4093-4BD3-B8BE-1F191B020623}.Tests (Debug)|VisualGDB.Build.0 = Tests (Debug)|VisualGDB
+		{C53E5934-4093-4BD3-B8BE-1F191B020623}.Tests (Release)|VisualGDB.ActiveCfg = Tests (Release)|VisualGDB
+		{C53E5934-4093-4BD3-B8BE-1F191B020623}.Tests (Release)|VisualGDB.Build.0 = Tests (Release)|VisualGDB
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6510B77A-75ED-4CD5-9948-6EE49157CF41}
+	EndGlobalSection
+EndGlobal

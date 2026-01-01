@@ -1,0 +1,378 @@
+/* SRO Custom Styles */
+
+/* Font Configuration */
+:root {
+    /* ***** font definitions ***** */
+    --font-primary: 'Ubuntu', sans-serif;
+    --font-condensed: 'Ubuntu Condensed', sans-serif;
+    --font-mono: 'Ubuntu Mono', monospace;
+
+    --sro-font-size-xxs: 0.25rem;
+    --sro-font-size-xs: 0.5rem;
+    --sro-font-size-small: 0.75rem;
+    --sro-font-size-base: 1rem;
+    --sro-font-size-large: 1.25rem;
+    --sro-font-size-xl: 1.5rem;
+    --sro-font-size-xxl: 1.75rem;
+    --sro-font-size-xxxl: 2rem;
+}
+
+/* Default font for all text */
+body, .navbar, .card, .btn, .form-control, .form-select, .badge, 
+.nav-link, .dropdown-item, h1, h2, h3, h4, h5, h6, p, span, div, td, th {
+    font-family: var(--font-condensed) !important;
+}
+
+/* Ubuntu Mono for numerical values */
+#current-temp, #target-temp, #profile-progress, 
+#elapsed-time, #remaining-time, #door-status, #system-uptime,
+input[type="number"], .numeric-value,
+#preheat-max-temp, #preheat-time, #soak-min-temp, #soak-max-temp, #soak-time,
+#reflow-min-temp, #reflow-max-temp, #reflow-time, #cooling-rate,
+#melting-point, #peak-temp {
+    font-family: var(--font-mono) !important;
+    font-weight: 500;
+}
+
+/* Ubuntu Mono for footer text */
+.sro-copyright-text,
+.sro-copyright-text * {
+    font-family: var(--font-mono) !important;
+    font-size: var(--sro-font-size-base) !important;
+}
+
+/* different font sizes */
+.sro-font-size-xxs { font-size: var(--sro-font-size-xxs) !important; }
+.sro-font-size-xs { font-size: var(--sro-font-size-xs) !important; }
+.sro-font-size-small { font-size: var(--sro-font-size-small) !important; }
+.sro-font-size-base { font-size: var(--sro-font-size-base) !important; }
+.sro-font-size-large { font-size: var(--sro-font-size-large) !important; }
+.sro-font-size-xl { font-size: var(--sro-font-size-xl) !important; }
+.sro-font-size-xxl { font-size: var(--sro-font-size-xxl) !important; }
+.sro-font-size-xxxl { font-size: var(--sro-font-size-xxxl) !important; }
+
+/* Ensure numerical inputs are clearly distinguishable */
+input[type="number"],
+input[type="text"] {
+    font-family: var(--font-condensed) !important;
+    background-color: rgba(var(--sro-green-a700-rgb), 0.1);
+    border-color: rgba(var(--sro-green-a700-rgb), 0.3);
+    color: #fff !important;
+    font-size: var(--sro-font-size-large) !important;
+    padding: 0.05rem 0.05rem !important;
+    line-height: 1.1 !important;
+}
+
+input[type="number"]:focus,
+input[type="text"]:focus {
+    font-family: var(--font-condensed) !important;
+    background-color: rgba(var(--sro-green-a700-rgb), 0.15);
+    border-color: var(--bs-success);
+    box-shadow: 0 0 0 0.2rem rgba(var(--sro-green-a700-rgb), 0.25);
+    color: #fff !important;
+    font-size: var(--sro-font-size-large) !important;
+    padding: 0.05rem 0.15rem !important;
+    line-height: 1.1 !important;
+}
+
+input[type="number"],
+input[type="number"]:focus {
+    text-align: center !important;
+}
+
+input[type="text"],
+input[type="text"]:focus
+{
+    text-align: start !important;
+}
+
+.form-check-input[type="checkbox"]:checked {
+    background-color: var(--bs-success);
+    border-color: var(--bs-success);
+}
+
+.form-check-input[type="checkbox"]:not(:checked) {
+    background-color: var(--bs-secondary);
+    border-color: var(--bs-secondary);
+}
+
+#ReflowChart {
+    height: 638px !important;
+}
+
+#ManualChart {
+    height: 638px !important;
+}
+
+#TuningChart {
+    height: 660px !important;
+}
+
+/* Navigation Enhancements */
+.navbar-brand {
+    font-family: var(--font-condensed);
+    font-size: 1.5rem;
+}
+
+.nav-link.active {
+    font-weight: 500;
+}
+
+.text-90-deg {
+    transform: rotate(270deg) !important;
+}
+
+#sro-status-bar {
+/*    border-radius: 0 0 5px 5px !important; */
+/*    padding: 0 !important; */
+/*    --bs-bg-opacity: 0.25; */
+/*    background-color: rgba(var(--sro-warning-rgb), var(--bs-bg-opacity)) !important; */
+}
+
+.connecting-bg {
+    /* height: 400px !important; */
+    background: linear-gradient(180deg, rgba(var(--sro-warning-rgb), 0.2), rgba(var(--sro-warning-rgb), 0)) !important;
+}
+
+.connection-status-icon {
+    font-size: var(--sro-font-size-base) !important;
+    transition: color 0.3s ease;
+}
+
+.connection-status-icon.connecting {
+    animation: connectionPulse 1.5s ease-in-out infinite;
+}
+
+@keyframes connectionPulse {
+    0%, 100% {
+        color: rgb(var(--sro-warning-rgb));
+    }
+    50% {
+        color: rgb(var(--sro-manual-rgb));
+    }
+}
+
+.connection-status-icon.connected {
+    color: rgb(var(--sro-connected-rgb)) !important;
+}
+
+.connection-status-icon.disconnected {
+    color: rgb(var(--sro-error-bg-rgb)) !important;
+}
+
+/* Custom slider styling for Manual Control */
+#rangeDoor::-webkit-slider-thumb {
+    appearance: none;
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    background: #6c757d; /* Bootstrap secondary gray - same as buttons */
+    border: 2px solid #FFD600;
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+#rangeDoor::-moz-range-thumb {
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    background: #6c757d; /* Bootstrap secondary gray - same as buttons */
+/*    border: 2px solid #ffffff; */
+    border: 2px solid #FFD600;
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+/* Content Sections */
+.content-section {
+    display: none;
+}
+
+.content-section.active {
+    display: block;
+    animation: fadeIn 0.3s ease-in;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Temperature Display */
+#current-temp {
+    font-family: var(--font-mono);
+    font-weight: 700;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+#target-temp {
+    font-family: var(--font-mono);
+    font-weight: 700;
+}
+
+/* Status Cards */
+.card {
+    transition: all 0.3s ease;
+    border: 1px solid var(--bs-border-color);
+}
+
+.card:hover {
+    /* transform: translateY(-2px); */
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+/* Status Icons */
+.status-icon {
+    transition: all 0.3s ease;
+}
+
+.status-icon.active {
+    color: var(--bs-success) !important;
+    animation: pulse 2s infinite;
+}
+
+.status-icon.error {
+    color: var(--bs-danger) !important;
+    animation: shake 0.5s infinite;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-2px); }
+    75% { transform: translateX(2px); }
+}
+
+/* Badge Enhancements */
+.badge {
+    transition: all 0.2s ease;
+}
+
+.badge.bg-danger {
+    animation: dangerPulse 2s infinite;
+}
+
+@keyframes dangerPulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.7; }
+}
+
+/* Dark Theme Enhancements */
+[data-bs-theme="dark"] {
+    --bs-body-bg: #212529;
+    --bs-body-color: #fff;
+}
+
+[data-bs-theme="dark"] .card {
+    background-color: #2d3237;
+    border-color: #495057;
+}
+
+[data-bs-theme="dark"] .navbar {
+    background-color: #1a1d20 !important;
+}
+
+[data-bs-theme="dark"] .table {
+    color: var(--bs-body-color);
+}
+
+[data-bs-theme="dark"] .form-control,
+[data-bs-theme="dark"] .form-select {
+    background-color: #2d3237;
+    border-color: #495057;
+    color: var(--bs-body-color);
+}
+
+[data-bs-theme="dark"] .form-control:focus,
+[data-bs-theme="dark"] .form-select:focus {
+    background-color: #2d3237;
+    border-color: var(--bs-primary);
+    color: var(--bs-body-color);
+}
+
+.danger-glow {
+    box-shadow: 0 0 20px rgba(220, 53, 69, 0.5);
+    animation: dangerGlow 2s infinite;
+}
+
+@keyframes dangerGlow {
+    0%, 100% { box-shadow: 0 0 20px rgba(220, 53, 69, 0.3); }
+    50% { box-shadow: 0 0 30px rgba(220, 53, 69, 0.7); }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .navbar-brand {
+        font-size: 1.2rem;
+    }
+    
+    .card-body {
+        padding: 1rem 0.75rem;
+    }
+    
+    #current-temp,
+    #target-temp {
+        font-size: 1.5rem;
+    }
+    
+    .btn-group .btn {
+        padding: 0.25rem 0.5rem;
+        font-size: 0.875rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .container-fluid {
+        padding-left: 0.5rem;
+        padding-right: 0.5rem;
+    }
+    
+    .card {
+        margin-bottom: 1rem;
+    }
+    
+    .navbar-toggler {
+        padding: 0.25rem 0.5rem;
+    }
+}
+
+/* Accessibility improvements */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+    .card {
+        border-width: 2px;
+    }
+    
+    .btn {
+        border-width: 2px;
+    }
+    
+    .badge {
+        border: 1px solid currentColor;
+    }
+}
+
+/* Focus indicators for keyboard navigation */
+.btn:focus,
+.nav-link:focus,
+.form-control:focus,
+.form-select:focus {
+    outline: 2px solid var(--bs-primary);
+    outline-offset: 2px;
+}
+

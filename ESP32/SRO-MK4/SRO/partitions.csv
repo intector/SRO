@@ -1,0 +1,17 @@
+# ESP32-S3 SRO Project Partition Table
+# Name,       Type, SubType, Offset,  Size,     Flags
+nvs,          data, nvs,     0x9000,  0x6000,
+phy_init,     data, phy,     0xf000,  0x1000,
+factory,      app,  factory, 0x10000, 0x200000,
+storage,      data, fat,     0x210000, 0x400000,
+profiles,     data, spiffs,  0x610000, 0x80000,
+config,       data, nvs,     0x690000, 0x10000,
+ota_0,        app,  ota_0,   0x6A0000, 0x200000,
+ota_1,        app,  ota_1,   0x8A0000, 0x200000,
+otadata,      data, ota,     0xAA0000, 0x2000,
+# storage,      data, fat,     0x210000, 0x100000,
+# profiles,     data, spiffs,  0x310000, 0x80000,
+# config,       data, nvs,     0x390000, 0x10000,
+# ota_0,        app,  ota_0,   0x3A0000, 0x200000,
+# ota_1,        app,  ota_1,   0x5A0000, 0x200000,
+# otadata,      data, ota,     0x7A0000, 0x2000,

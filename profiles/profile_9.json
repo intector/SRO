@@ -1,0 +1,26 @@
+{
+	"id":	9,
+	"name":	"blank profile 10",
+	"description":	"blank temperature profile",
+	"solder_melting_point":	210,
+	"absolute_peak_temp":	240,
+	"estimated_duration_sec":	305,
+	"active":	false,
+	"preheat":	{
+		"max_temp":	100,
+		"temp_sec":	2
+	},
+	"soak":	{
+		"max_temp":	180,
+		"time_sec":	120
+	},
+	"reflow":	{
+		"min_temp":	200,
+		"max_temp":	225,
+		"time_sec":	30
+	},
+	"cooling":	{
+		"max_rate":	-2,
+		"target_temp":	50
+	}
+}

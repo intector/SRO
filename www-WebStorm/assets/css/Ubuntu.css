@@ -1,0 +1,13 @@
+/* Ubuntu Font - Regular */
+@font-face {
+  font-family: 'Ubuntu';
+  src: url('../fonts/Ubuntu_Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Ubuntu font utility class */
+.font-ubuntu {
+  font-family: 'Ubuntu', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+}

@@ -1,0 +1,13 @@
+/* Ubuntu Mono Font - Regular */
+@font-face {
+  font-family: 'Ubuntu Mono';
+  src: url('../fonts/UbuntuMono_Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Ubuntu Mono font utility class */
+.font-ubuntu-mono {
+  font-family: 'Ubuntu Mono', 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier, monospace;
+}

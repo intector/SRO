@@ -1,0 +1,26 @@
+{
+	"id":	2,
+	"name":	"Low-Temp SAC",
+	"description":	"Low temperature profile for sensitive components",
+	"solder_melting_point":	138,
+	"absolute_peak_temp":	180,
+	"estimated_duration_sec":	313,
+	"active":	true,
+	"preheat":	{
+		"max_temp":	100,
+		"time_sec":	60
+	},
+	"soak":	{
+		"max_temp":	130,
+		"time_sec":	120
+	},
+	"reflow":	{
+		"min_temp":	150,
+		"max_temp":	165,
+		"time_sec":	30
+	},
+	"cooling":	{
+		"max_rate":	-2,
+		"target_temp":	50
+	}
+}

@@ -1,0 +1,26 @@
+{
+	"id":	0,
+	"name":	"SAC305 Lead-Free",
+	"description":	"Standard lead-free solder profile (SAC305)",
+	"solder_melting_point":	190,
+	"absolute_peak_temp":	250,
+	"estimated_duration_sec":	280,
+	"active":	false,
+	"preheat":	{
+		"max_temp":	150,
+		"time_sec":	60
+	},
+	"soak":	{
+		"max_temp":	180,
+		"time_sec":	120
+	},
+	"reflow":	{
+		"min_temp":	200,
+		"max_temp":	230,
+		"time_sec":	30
+	},
+	"cooling":	{
+		"max_rate":	-3,
+		"target_temp":	50
+	}
+}
