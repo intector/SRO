@@ -25,6 +25,7 @@
 #include "a2s_ssr.h"
 #include "cJSON.h"
 #include "a2s_pid.h"
+#include "esp_wifi.h"
 
 static const char *TAG = "SRO_WEBSOCKET_BROADCAST";
 
@@ -239,6 +240,13 @@ static char *build_status_json(void)
                               (xEventGroupGetBits(sro_status2_events) & SRO_SE2_SYSTEM_INITIALIZED) != 0);
         cJSON_AddBoolToObject(diagnostics, "tasks_released",
                               (ctrl1_bits & SRO_CE1_TASKS_RELEASE) != 0);
+        wifi_ap_record_t ap_info;
+        if (esp_wifi_sta_get_ap_info(&ap_info) == ESP_OK) {
+            cJSON_AddNumberToObject(diagnostics, "rssi", ap_info.rssi);
+        }
+        else {
+            cJSON_AddNumberToObject(diagnostics, "rssi", 0);
+        }
 
         cJSON_AddItemToObject(root, "diagnostics", diagnostics);
     }

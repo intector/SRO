@@ -711,6 +711,43 @@ class SroApp {
             }
         }
 
+        // RSSI signal strength with dynamic icon and colors
+        if (data.diagnostics && data.diagnostics.rssi !== undefined) {
+            const rssi = data.diagnostics.rssi;
+            const rssiElement = document.getElementById('rssi-strength-status');
+            const rssiIcon = document.getElementById('rssi-icon');
+
+            if (rssiElement) {
+                rssiElement.textContent = `${rssi} dBm`;
+            }
+
+            if (rssiIcon) {
+                let iconClass, colorVar;
+
+                if (rssi === 0 || rssi < -90) {
+                    // No connection or very weak
+                    iconClass = 'bi-wifi-off';
+                    colorVar = 'var(--sro-red-500)';           // #F44336
+                } else if (rssi < -70) {
+                    // Weak signal
+                    iconClass = 'bi-wifi-1';
+                    colorVar = 'var(--sro-yellow-500)';        // #FFEB3B
+                } else if (rssi < -50) {
+                    // Medium signal
+                    iconClass = 'bi-wifi-2';
+                    colorVar = 'var(--sro-light-green-500)';   // #8BC34A
+                } else {
+                    // Strong signal
+                    iconClass = 'bi-wifi';
+                    colorVar = 'var(--sro-connected)';         // #00C853
+                }
+
+                rssiIcon.className = `bi ${iconClass} hardware-status-icon`;
+                rssiIcon.style.color = colorVar;
+                rssiElement.style.color = colorVar;
+            }
+        }
+
         // PID values
         if (data.pid) {
             const kpElement = document.getElementById('used-kp');
